@@ -60,6 +60,4 @@ If you’re looking for a lightweight and feature-packed file manager for Window
 
 ## Want a More Aesthetic Desktop?
 
-If you’re also looking to give your **Windows desktop** a fresh and clean look, check out our Desktop Customization Guide for a step-by-step process on how to make your desktop more organized, sleek, and functional. It’s the perfect companion to organizing your files and creating a minimalist, aesthetically pleasing workspace! 
-
-{{< article link="/posts/aesthetic-desktop-setup/" >}}
+If you’re also looking to give your **Windows desktop** a fresh and clean look, check out the [Desktop Customization Guide](/posts/aesthetic-desktop-setup/) for a step-by-step process on how to make your desktop more organized, sleek, and functional. It’s the perfect companion to organizing your files and creating a minimalist, aesthetically pleasing workspace!

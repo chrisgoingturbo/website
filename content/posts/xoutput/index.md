@@ -9,11 +9,6 @@ tags: ["Gaming", "Controller", "Windows"]
 For more details, check out the video here:  
 {{< youtubeLite id="M-D9OHRQ37A" label="The Best Alternative for X360ce Software" >}} 
 
-{{< alert >}}
-NEW/UPDATED VIDEO COMING SOON FOR 2025 - NEW CHANGES!
-{{< /alert >}}
- 
-
 If you have an older or unsupported game controller (gamepad, wheel, joystick, etc.), but Xbox 360 controllers are supported, you can use **XOutput** to emulate an Xbox 360 controller, allowing you to enjoy gaming with your existing hardware.
 
 ## Supported and Recommended Controllers:
