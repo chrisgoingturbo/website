@@ -12,11 +12,9 @@ This video has **over a million views** and is one of the most requested tutoria
 
 The video and the instructions here will show you **step-by-step** how to configure X360ce, explain how to troubleshoot common issues, and provide advice on fine-tuning your controller for specific games. 
 
-If you prefer an alternative method with **XOUTPUT** software, please check out this linked article for more information:
-{{< article link="/posts/xoutput/" >}}
+If you prefer an alternative method with **XOUTPUT** software, [read the XOUTPUT guide](/posts/xoutput/).
 
-Also, ensure that you have **Visual C Runtimes** installed to avoid any issues. Find the guide here:
-{{< article link="/posts/visual-c/" >}}
+Also, ensure that you have **Visual C Runtimes** installed to avoid any issues — [follow the Visual C++ Redistributable guide](/posts/visual-c/).
 
 ---
 

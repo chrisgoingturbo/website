@@ -284,6 +284,16 @@
   }
 
    
+  .header-site-title {
+    display: none;
+  }
+  @media (width >= 853px) {
+    .header-site-title {
+      display: inline;
+    }
+  }
+
+   
   .main-menu > a {
     font-weight: 300 !important;
     font-size: 0.875rem !important;
@@ -296,30 +306,93 @@
   }
 
    
-  .main-menu nav a[href="/proptracker/"] {
-    background: rgba(255,255,255,0.92);
-    color: #111 !important;
-    border-radius: 0.75rem;
+  .main-menu nav a[href="https://www.trackmyprop.app"] {
+    border-radius: 0.5rem;
     padding: 0.45rem 1.1rem;
-    transition: background 0.15s;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    transition: box-shadow 0.15s, opacity 0.15s;
   }
-  .main-menu nav a[href="/proptracker/"]:hover {
-    background: rgba(255,255,255,1);
+  .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
+    opacity: 0.88;
   }
-  .main-menu nav a[href="/proptracker/"] span {
-    font-weight: 400 !important;
+  .main-menu nav a[href="https://www.trackmyprop.app"] span {
+    font-weight: 500 !important;
     letter-spacing: 0;
     font-size: 0.9rem;
   }
-  :root:not(.dark) .main-menu nav a[href="/proptracker/"] {
-    background: #111;
+  .main-menu nav a[href="https://www.trackmyprop.app"]::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background: url('https://www.trackmyprop.app/trackmyprop.svg') center/contain no-repeat;
+  }
+   
+  .main-menu nav a[href="https://www.trackmyprop.app"] {
+    background: rgba(255,255,255,0.92) !important;
+    color: #111 !important;
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"] span {
+    color: #111 !important;
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
+    box-shadow: 0 4px 18px rgba(255,255,255,0.2);
+  }
+  .main-menu nav a[href="https://www.trackmyprop.app"]::before {
+    filter: brightness(0);
+  }
+   
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] {
+    background: #111 !important;
     color: #fff !important;
   }
-  :root:not(.dark) .main-menu nav a[href="/proptracker/"]:hover {
-    background: #333;
-  }
-  :root:not(.dark) .main-menu nav a[href="/proptracker/"] span {
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"] span {
     color: #fff !important;
+  }
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"]:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  }
+  :root:not(.dark) .main-menu nav a[href="https://www.trackmyprop.app"]::before {
+    filter: brightness(0) invert(1);
+  }
+
+   
+  .main-menu nav a:not([href="https://www.trackmyprop.app"]) {
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    transition: background 0.15s ease;
+  }
+   
+  .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover,
+  .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover span {
+    background: rgba(255,255,255,0.09);
+    color: inherit !important;
+  }
+  :root:not(.dark) .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover,
+  :root:not(.dark) .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover span {
+    background: rgba(0,0,0,0.06);
+    color: inherit !important;
+  }
+   
+  .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover span {
+    background: none;
+  }
+  :root:not(.dark) .main-menu nav a:not([href="https://www.trackmyprop.app"]):hover span {
+    background: none;
+  }
+  .main-menu nav button {
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.55rem;
+    transition: background 0.15s ease, color 0.15s ease;  
+  }
+  .main-menu nav button:hover {
+    background: rgba(255,255,255,0.09);
+  }
+  :root:not(.dark) .main-menu nav button:hover {
+    background: rgba(0,0,0,0.06);
   }
 
    
@@ -376,26 +449,52 @@
 </style>
 
 <script>
+ 
+(function () {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.documentElement.classList.add('dark');
+    try { localStorage.setItem('appearance', 'dark'); } catch (e) {}
+  }
+})();
+</script>
+
+<script>
+ 
+(function () {
+  var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (!isSafari) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    new MutationObserver(function () {
+      var b = document.body;
+      b.style.display = 'none';
+      void b.offsetHeight;
+      b.style.display = '';
+    }).observe(document.documentElement, {
+      attributes: true, attributeFilter: ['class']
+    });
+  });
+})();
+</script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     var roles = [
       { text: 'Community Manager', color: 'var(--bio-1)' },
       { text: 'Futures Trader',    color: 'var(--bio-2)' },
-      { text: 'Noob Dev',          color: 'var(--bio-3)' },
+      { text: 'Web Developer',      color: 'var(--bio-3)' },
       { text: 'Graphics Designer', color: 'var(--bio-4)' },
       { text: 'Web Video Producer',color: 'var(--bio-5)' }
     ];
     var idx = 0;
 
-    var bio = Array.from(document.querySelectorAll('p')).find(function (p) {
-      return p.textContent.includes('Community Manager') &&
-             p.textContent.includes('Futures Trader');
-    });
+    var bio = document.getElementById('bio-subtitle');
     if (!bio) return;
 
     bio.innerHTML = '<span class="bio-role"></span>';
     var span = bio.querySelector('.bio-role');
     span.textContent = roles[0].text;
     span.style.color  = roles[0].color;
+    bio.style.visibility = 'visible';
 
     setInterval(function () {
       span.classList.add('hidden');
@@ -473,7 +572,7 @@
     
   
   
-    <a href="/" class="text-base font-medium truncate min-w-0 shrink" style="text-decoration:none;">
+    <a href="/" class="header-site-title text-base font-medium truncate min-w-0 shrink" style="text-decoration:none;">
       GodsBattle<span aria-hidden="true" style="opacity:0.3; display:inline-block; width:1px; height:0.85em; background:currentColor; vertical-align:middle; margin:0 0.4em;"></span>Christian Obanaka
     </a>
   
@@ -539,15 +638,17 @@
       
   
     <a
-      href="/proptracker/"
+      href="https://www.trackmyprop.app"
+      
+        target="_blank"
       
       class="flex items-center bf-icon-color-hover"
-      aria-label="Prop Tracker 👨🏾‍🚀"
-      title="Prop Tracker">
+      aria-label="trackmyprop"
+      title="">
       
       
         <span class="text-base font-medium break-normal">
-          Prop Tracker 👨🏾‍🚀
+          trackmyprop
         </span>
       
     </a>
@@ -596,6 +697,41 @@
     </div>
     <div class="flex md:hidden">
       <div class="flex items-center h-14 gap-4">
+
+  
+  
+    
+  
+    
+      
+        <a
+          href="/about/resume/"
+          
+          class="text-base font-medium text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 whitespace-nowrap"
+          style="text-decoration:none;">
+          Resume
+        </a>
+      
+    
+  
+    
+  
+    
+      
+        <a
+          href="https://www.trackmyprop.app"
+          
+            target="_blank"
+          
+          class="text-base font-medium whitespace-nowrap"
+          style="text-decoration:none; background:rgba(255,255,255,0.92); color:#111; border-radius:0.5rem; padding:0.4rem 1rem; transition:background 0.15s;">
+          trackmyprop
+        </a>
+      
+    
+  
+
+  
   
     <button
       id="search-button-mobile"
@@ -607,130 +743,7 @@
     </button>
   
 
-  
-    <button
-      id="appearance-switcher-mobile"
-      type="button"
-      aria-label="Dark mode switcher"
-      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
-      <div class="dark:hidden">
-        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</span>
-      </div>
-      <div class="hidden dark:block">
-        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</span>
-      </div>
-    </button>
-  
-
-  
-    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
-    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
-      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
-</span>
-    </label>
-
-    <div
-      role="dialog"
-      aria-modal="true"
-      style="scrollbar-gutter: stable;"
-      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
-      bf-scrollbar">
-      <label
-        for="mobile-menu-toggle"
-        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
-        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-</span>
-      </label>
-      <nav class="mx-auto max-w-md space-y-6">
-        
-  
-    
-    <div class="px-2">
-      <a
-        href="/posts/"
-        aria-label="Posts"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="" class="text-2xl font-bold tracking-tight">
-          Posts
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/about/resume/"
-        aria-label="Resume"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="Resume" class="text-2xl font-bold tracking-tight">
-          Resume
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/about/contact/"
-        aria-label="Contact"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="Contact Me" class="text-2xl font-bold tracking-tight">
-          Contact
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-    
-    <div class="px-2">
-      <a
-        href="/proptracker/"
-        aria-label="Prop Tracker 👨🏾‍🚀"
-        
-        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        
-        <span title="Prop Tracker" class="text-2xl font-bold tracking-tight">
-          Prop Tracker 👨🏾‍🚀
-        </span>
-        
-      </a>
-
-      
-    </div>
-  
-
-        
-  
-
-        
-  
-
-      </nav>
-    </div>
-  
 </div>
-
-
-
-
-
-
 
     </div>
   </div>
@@ -773,6 +786,40 @@
         
 <style>
    
+   
+  .pt-word-wrap {
+    display: inline-block;
+    overflow: hidden;
+    height: 1.15em;
+    line-height: 1.15;
+    vertical-align: text-top;
+  }
+  .pt-word {
+    display: inline-block;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .pt-w1 { color: #f97316; }
+  .dark .pt-w1 { color: #fb923c; }
+  .pt-w2 { color: #16a34a; }
+  .dark .pt-w2 { color: #4ade80; }
+  .pt-w3 { color: #dc2626; }
+  .dark .pt-w3 { color: #f87171; }
+
+   
+  .pt-cta-tmp { background: #bfff80 !important; color: #0a0a0a !important; }
+  .pt-cta-tmp:hover { box-shadow: 0 8px 28px rgba(191,255,128,0.45), 0 2px 8px rgba(191,255,128,0.2) !important; }
+
+   
+  .pt-cta-arrow {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+  }
+  .pt-cta:hover .pt-cta-arrow {
+    transform: translateX(5px);
+  }
+
+   
   .pt-badge {
     display: inline-block;
     padding: 0.3rem 1rem;
@@ -795,13 +842,43 @@
     font-size: 1rem;
     background: #000;
     color: #fff;
-    transition: opacity 0.15s;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.18s ease, opacity 0.15s;
   }
   .dark .pt-cta {
     background: #fff;
     color: #000;
   }
-  .pt-cta:hover { opacity: 0.75; }
+   
+  .pt-cta:hover {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.015);
+  }
+  :root:not(.dark) .pt-cta:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .dark .pt-cta:hover {
+    box-shadow: 0 0 32px 6px rgba(255,255,255,0.18), 0 8px 24px rgba(255,255,255,0.08);
+  }
+   
+  .pt-cta:active {
+    transform: scale(0.97) translateY(0) !important;
+    transition-duration: 0.07s !important;
+  }
+   
+  .pt-ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: pt-ripple-anim 0.55s ease-out forwards;
+    pointer-events: none;
+  }
+  :root:not(.dark) .pt-ripple { background: rgba(255,255,255,0.4); }
+  .dark .pt-ripple             { background: rgba(0,0,0,0.12); }
+  @keyframes pt-ripple-anim {
+    to { transform: scale(5); opacity: 0; }
+  }
 
    
   .pt-carousel-track {
@@ -874,7 +951,7 @@
 </style>
 
 
-<section class="w-full max-w-4xl mx-auto px-4 sm:px-8 pt-12 pb-0 text-center">
+<section class="w-full max-w-4xl mx-auto px-4 sm:px-8 pt-0 pb-0 text-center">
 
   <div class="flex justify-center mb-5">
     <span class="pt-badge">New Product</span>
@@ -884,9 +961,9 @@
     Prop Tracker 👨🏾‍🚀
   </h1>
 
-  <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto opacity-50 leading-relaxed mb-10">
-    Track every prop firm challenge, payout, and expense — all in one place.
-    Built for funded traders who want clarity, not chaos.
+  <p style="font-size: 1.1rem; max-width: 36rem;" class="mx-auto leading-relaxed mb-10">
+    <span class="opacity-50">Track every </span><span class="pt-word-wrap"><span class="pt-word pt-w2" id="ptWord">prop firm payout</span></span><span class="opacity-50"> — all in one place.
+    Built for funded traders who want clarity, not chaos.</span>
   </p>
 
 </section>
@@ -913,11 +990,60 @@
 
 
 <div class="text-center mt-16 mb-24">
-  <a class="gumroad-button" href="https://chrisgoingturbo.gumroad.com/l/proptracker">Buy on</a>
+  <a
+    href="https://www.trackmyprop.app"
+    class="pt-cta pt-cta-tmp"
+    style="text-decoration:none;">
+    <img src="https://www.trackmyprop.app/trackmyprop.svg" alt="" aria-hidden="true" style="width:20px;height:20px;flex-shrink:0;filter:brightness(0);">
+    trackmyprop
+    <span class="pt-cta-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+  </a>
   <p class="mt-4 text-xs opacity-30 tracking-wide uppercase">v1 — built for funded traders</p>
 </div>
 
-<script src="https://gumroad.com/js/gumroad.js"></script>
+
+<script>
+ 
+(function () {
+  var words = [
+    { text: 'prop firm payout',    cls: 'pt-w2' },
+    { text: 'prop firm challenge', cls: 'pt-w1' },
+    { text: 'trading expense',     cls: 'pt-w3' }
+  ];
+  var idx  = 0;
+  var span = document.getElementById('ptWord');
+  if (!span) return;
+
+  function swipe() {
+     
+    span.style.transition = 'transform 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease';
+    span.style.transform  = 'translateY(-115%)';
+    span.style.opacity    = '0';
+
+    setTimeout(function () {
+       
+      idx = (idx + 1) % words.length;
+      span.textContent = words[idx].text;
+      span.className = 'pt-word ' + words[idx].cls;
+
+       
+      span.style.transition = 'none';
+      span.style.transform  = 'translateY(115%)';
+      span.style.opacity    = '0';
+
+       
+      void span.offsetHeight;
+
+       
+      span.style.transition = 'transform 0.38s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease';
+      span.style.transform  = 'translateY(0)';
+      span.style.opacity    = '1';
+    }, 290);
+  }
+
+  setInterval(swipe, 2400);
+})();
+</script>
 
 <script>
   (function () {
@@ -947,6 +1073,71 @@
 
     slides.forEach(function (s) { observer.observe(s); });
   })();
+</script>
+
+<script>
+ 
+(function () {
+  var btn = document.querySelector('.pt-cta');
+  if (!btn) return;
+
+  btn.addEventListener('click', function (e) {
+     
+    var r    = btn.getBoundingClientRect();
+    var size = Math.max(r.width, r.height) * 2;
+    var rpl  = document.createElement('span');
+    rpl.className = 'pt-ripple';
+    rpl.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + (e.clientX - r.left - size / 2) + 'px;top:' + (e.clientY - r.top - size / 2) + 'px;';
+    btn.appendChild(rpl);
+    setTimeout(function () { rpl.remove(); }, 600);
+
+     
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d');
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var W = canvas.width, H = canvas.height;
+    var colors = ['#ffffff','#e2e8f0','#93c5fd','#c4b5fd','#5eead4','#fda4af','#fdba74'];
+    var particles = [];
+    var origins = [{ x: W * 0.28, y: H * 0.68 }, { x: W * 0.72, y: H * 0.68 }];
+    for (var i = 0; i < 150; i++) {
+      var o = origins[i % 2], side = o.x < W / 2 ? 1 : -1;
+      var rad = (-90 + side * (Math.random() * 45)) * Math.PI / 180;
+      var spd = Math.random() * 9 + 4;
+      particles.push({
+        x: o.x + (Math.random() - 0.5) * 30, y: o.y,
+        vx: Math.cos(rad) * spd, vy: Math.sin(rad) * spd,
+        size: Math.random() * 7 + 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rotation: Math.random() * 360, rotSpeed: (Math.random() - 0.5) * 10,
+        shape: Math.random() > 0.4 ? 'rect' : 'circle',
+        wobble: Math.random() * Math.PI * 2, wobbleSpeed: Math.random() * 0.08 + 0.04
+      });
+    }
+    var start = Date.now(), duration = 3600;
+    (function draw() {
+      var elapsed = Date.now() - start;
+      if (elapsed > duration) { canvas.remove(); return; }
+      ctx.clearRect(0, 0, W, H);
+      var progress = elapsed / duration;
+      particles.forEach(function (p) {
+        p.vy += 0.18; p.vx *= 0.99; p.wobble += p.wobbleSpeed;
+        p.x += p.vx + Math.sin(p.wobble) * 0.4; p.y += p.vy; p.rotation += p.rotSpeed;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, 1 - Math.pow(progress, 1.5));
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation * Math.PI / 180);
+        ctx.fillStyle = p.color;
+        if (p.shape === 'rect') { ctx.fillRect(-p.size / 2, -p.size * 0.28, p.size, p.size * 0.56); }
+        else { ctx.beginPath(); ctx.arc(0, 0, p.size * 0.45, 0, Math.PI * 2); ctx.fill(); }
+        ctx.restore();
+      });
+      requestAnimationFrame(draw);
+    })();
+  });
+})();
 </script>
 
         

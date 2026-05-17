@@ -39,4 +39,4 @@ After the process is complete, you will have a **bootable USB drive** ready to i
 
 - **Fast & Efficient**: Rufus is one of the fastest tools for creating bootable USB drives.
 - **Simple Interface**: The interface is user-friendly, making it easy for beginners and experts alike.
-- **Supports Various ISO Files**: Whether you're installing Windows or other OS, Rufus ca
+- **Supports Various ISO Files**: Whether you're installing Windows or another OS, Rufus handles the ISO without extra tooling.

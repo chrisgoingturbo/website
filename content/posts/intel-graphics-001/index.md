@@ -51,13 +51,6 @@ Now that you have the Intel Graphics Control Center up and running, let's optimi
 
 ---
 
-## 📹 **Video Tutorial Coming Soon!**
-
-The video tutorial for this process will be available soon! Once it's out, you can watch it below for a detailed, step-by-step guide. Stay tuned for more updates!
-
-
----
-
 ## Conclusion
 
 The **Intel Graphics Command Center (IGCC)** is a powerful tool for optimizing your system’s graphics performance, especially for gaming and multimedia tasks. As technology evolves, it’s crucial to stay updated with the latest tools and utilities that can help improve your computer's performance, and the IGCC is designed to be a one-stop solution for that. Whether you're a casual gamer looking to improve your gameplay or a professional in need of precise tuning, the **Intel Graphics Command Center** is a great resource.

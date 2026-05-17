@@ -5,8 +5,6 @@ draft: false
 tags: ["Customization", "Windows"]
 ---
 
-**Watch Video Here** 
----
 {{< youtubeLite id="S8i_Z1AFw8c" label="Make your Windows Desktop look CLEAN & AESTHETIC!" >}}
 
 
