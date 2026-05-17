@@ -1,7 +1,5 @@
 {
-  "name": "godsbattle",
+  "name": "godsbattle-monorepo",
   "private": true,
-  "dependencies": {
-    "next": "16.2.6"
-  }
+  "workspaces": ["web"]
 }
