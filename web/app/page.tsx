@@ -9,39 +9,70 @@ import {
   XIcon,
   YouTubeIcon,
 } from "@/components/brand-icons";
+import { SocialMenu, type SocialMenuItem } from "@/components/social-menu";
+import { CopyEmailButton } from "@/components/copy-email-button";
+import { SendMessageButton } from "@/components/send-message-button";
 import { getAllPostMeta } from "@/lib/posts";
+
+const socialItems: SocialMenuItem[] = [
+  {
+    href: "https://x.com/chrisgoingturbo",
+    label: "x / twitter",
+    icon: <XIcon className="h-3 w-3" />,
+  },
+  {
+    href: "https://github.com/Godsbattle",
+    label: "github",
+    icon: <GitHubIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "https://youtube.com/godsbattle",
+    label: "youtube",
+    icon: <YouTubeIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "https://instagram.com/chrisgoingturbo",
+    label: "instagram",
+    icon: <InstagramIcon className="h-3.5 w-3.5" />,
+  },
+  {
+    href: "mailto:christian@godsbattle.net",
+    label: "email",
+    icon: <MailFilledIcon className="h-3.5 w-3.5" />,
+  },
+];
 
 export default async function Home() {
   const allPosts = await getAllPostMeta();
   const posts = allPosts.slice(0, 6);
 
   return (
-    <main className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-24">
-      <header className="flex items-center gap-4">
-        <Image
-          src="/avatar.webp"
-          alt=""
-          width={56}
-          height={56}
-          priority
-          className="h-14 w-14 rounded-full ring-1 ring-border"
-          style={{ viewTransitionName: "site-avatar" }}
-        />
-        <div className="leading-tight">
-          <p className="text-[18px] font-medium tracking-tight text-foreground">
-            Christian Obanaka{" "}
-            <span className="font-normal text-muted">(a.k.a chrisgoingturbo)</span>
-          </p>
-          <p className="mt-1 text-[15px] font-medium text-muted">
-            head of community at thePropTrade
-          </p>
+    <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-24">
+      <header className="flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Image
+            src="/avatar.webp"
+            alt=""
+            width={56}
+            height={56}
+            priority
+            className="h-14 w-14 rounded-full ring-1 ring-border"
+            style={{ viewTransitionName: "site-avatar" }}
+          />
+          <div className="leading-tight">
+            <h1 className="text-[18px] font-medium tracking-tight text-foreground">
+              Christian Obanaka{" "}
+              <span className="font-normal text-muted">(a.k.a chrisgoingturbo)</span>
+            </h1>
+            <p className="mt-1 text-[15px] font-medium text-muted">
+              head of community at thePropTrade
+            </p>
+          </div>
         </div>
+        <SocialMenu items={socialItems} />
       </header>
 
-      <section
-        className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground"
-
-      >
+      <section className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground">
         <p>
           i&rsquo;m head of community at{" "}
           <ProseLink href="https://theproptrade.com">
@@ -50,7 +81,7 @@ export default async function Home() {
               alt=""
               width={18}
               height={18}
-              className="-mt-px inline-block h-[18px] w-[18px] self-center"
+              className="-mt-px inline-block h-[18px] w-[18px] self-center dark:invert"
             />
             thePropTrade
           </ProseLink>
@@ -66,7 +97,7 @@ export default async function Home() {
               alt=""
               width={18}
               height={18}
-              className="-mt-px inline-block h-[18px] w-[18px] self-center"
+              className="-mt-px inline-block h-[18px] w-[18px] self-center dark:invert"
             />
             PipFarm
           </ProseLink>{" "}
@@ -90,8 +121,13 @@ export default async function Home() {
         </p>
       </section>
 
-      <section className="mt-20">
-        <h2 className="text-[15px] font-medium tracking-tight text-foreground">
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        <SendMessageButton />
+        <CopyEmailButton />
+      </div>
+
+      <section aria-labelledby="projects-heading" className="mt-20">
+        <h2 id="projects-heading" className="text-[15px] font-medium tracking-tight text-foreground">
           projects
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -111,14 +147,14 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mt-20">
+      <section aria-labelledby="writing-heading" className="mt-20">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-[15px] font-medium tracking-tight text-foreground">
+          <h2 id="writing-heading" className="text-[15px] font-medium tracking-tight text-foreground">
             writing
           </h2>
           <Link
             href="/posts/"
-            className="group inline-flex items-center gap-1 text-[13px] text-muted hover:text-foreground"
+            className="group inline-flex items-center gap-1 text-[14px] text-muted hover:text-foreground"
           >
             all {allPosts.length}
             <ArrowUpRight
@@ -150,7 +186,7 @@ export default async function Home() {
                   </p>
                   <time
                     dateTime={p.date}
-                    className="mt-1 block text-[13px] text-muted tabular-nums"
+                    className="mt-1 block text-[14px] text-muted tabular-nums"
                   >
                     {formatLongDate(p.date)}
                   </time>
@@ -161,14 +197,14 @@ export default async function Home() {
         </ul>
       </section>
 
-      <section className="mt-20">
+      <section aria-labelledby="resources-heading" className="mt-20">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-[15px] font-medium tracking-tight text-foreground">
+          <h2 id="resources-heading" className="text-[15px] font-medium tracking-tight text-foreground">
             resources
           </h2>
           <Link
             href="/free/"
-            className="group inline-flex items-center gap-1 text-[13px] text-muted hover:text-foreground"
+            className="group inline-flex items-center gap-1 text-[14px] text-muted hover:text-foreground"
           >
             browse all
             <ArrowUpRight
@@ -188,7 +224,7 @@ export default async function Home() {
                 alt=""
                 width={36}
                 height={36}
-                className="h-9 w-9"
+                className="h-9 w-9 dark:invert"
               />
             }
           />
@@ -201,102 +237,35 @@ export default async function Home() {
                 alt=""
                 width={28}
                 height={28}
-                className="h-7 w-7"
+                className="h-7 w-7 dark:invert"
               />
             }
           />
         </div>
       </section>
 
-      <footer
-        className="mt-24 border-t border-border pt-8"
-
-      >
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="text-[12px] text-muted tabular-nums">
-            © {new Date().getUTCFullYear()} godsbattle.net
-          </p>
-          <ul className="flex items-center gap-1">
-            <li>
-              <SocialLink
-                href="https://youtube.com/godsbattle"
-                label="youtube"
-              >
-                <YouTubeIcon className="h-[14px] w-[14px]" />
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink
-                href="https://x.com/chrisgoingturbo"
-                label="x / twitter"
-              >
-                <XIcon className="h-[13px] w-[13px]" />
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink
-                href="https://instagram.com/chrisgoingturbo"
-                label="instagram"
-              >
-                <InstagramIcon className="h-[14px] w-[14px]" />
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink
-                href="https://github.com/Godsbattle"
-                label="github"
-              >
-                <GitHubIcon className="h-[14px] w-[14px]" />
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink
-                href="mailto:christian@godsbattle.net"
-                label="email"
-              >
-                <MailFilledIcon className="h-[14px] w-[14px]" />
-              </SocialLink>
-            </li>
-          </ul>
-        </div>
+      <footer className="mt-24 border-t border-border pt-8">
+        <p className="text-[13px] text-muted tabular-nums">
+          © {new Date().getUTCFullYear()} godsbattle.net
+        </p>
       </footer>
     </main>
-  );
-}
-
-function SocialLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: ReactNode;
-}) {
-  const isExternal = href.startsWith("http");
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      title={label}
-      {...(isExternal ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-      className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted transition-[color,background-color] duration-200 hover:bg-muted/10 hover:text-foreground"
-    >
-      {children}
-    </a>
   );
 }
 
 function ProseLink({ href, children }: { href: string; children: ReactNode }) {
   const isExternal = /^https?:/.test(href);
   const isMail = href.startsWith("mailto:");
+  const isTextOnly = typeof children === "string";
   return (
     <a
       href={href}
       {...(isExternal && !isMail
         ? { target: "_blank", rel: "noreferrer noopener" }
         : {})}
-      className="inline-flex items-baseline gap-1 font-semibold text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground"
+      className={`${
+        isTextOnly ? "" : "inline-flex items-baseline gap-1 "
+      }font-semibold text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground`}
     >
       {children}
     </a>
@@ -323,7 +292,7 @@ function FreeCard({
       >
         {icon}
       </span>
-      <p className="text-[13.5px] font-medium tracking-tight text-foreground">
+      <p className="text-[14.5px] font-medium tracking-tight text-foreground">
         {title}
       </p>
       <ArrowUpRight
@@ -365,7 +334,7 @@ function ProjectCard({
             alt=""
             width={80}
             height={80}
-            className="h-20 w-20 object-contain"
+            className="h-20 w-20 object-contain dark:invert"
           />
         </div>
         <div className="flex w-full flex-col px-5 pb-5 pt-0">
@@ -379,7 +348,7 @@ function ProjectCard({
               strokeWidth={2}
             />
           </div>
-          <p className="mt-1 min-h-[2lh] text-[13px] leading-snug text-muted">
+          <p className="mt-1 min-h-[2lh] text-[14px] leading-snug text-muted">
             {subtitle}
           </p>
         </div>

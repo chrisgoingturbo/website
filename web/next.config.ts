@@ -1,7 +1,17 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { NextConfig } from "next";
+
+// Pin Turbopack to /web/ — there's a stub package-lock.json at the repo root
+// for Vercel framework detection, which Next.js otherwise infers as the
+// workspace root and ends up watching the entire monorepo (OOMs the dev server).
+const here = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
+  turbopack: {
+    root: here,
+  },
   experimental: {
     viewTransition: true,
   },

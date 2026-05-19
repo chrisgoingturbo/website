@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-[620px] px-6 pt-20 pb-32 sm:pt-28">
+      <main id="main" className="mx-auto max-w-[620px] px-6 pt-20 pb-32 sm:pt-28">
         <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
           404
         </p>
@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="mt-4 text-[15px] leading-[1.7] text-muted">
           the url might be old, or i moved it.
         </p>
-        <div className="mt-8 flex items-center gap-6 text-[13px]">
+        <div className="mt-8 flex items-center gap-6 text-[14px]">
           <Link
             href="/posts/"
             className="group inline-flex items-center gap-1.5 text-foreground/80 hover:text-foreground"

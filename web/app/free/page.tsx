@@ -30,7 +30,7 @@ const items: Item[] = [
         alt=""
         width={36}
         height={36}
-        className="h-9 w-9"
+        className="h-9 w-9 dark:invert"
       />
     ),
     status: "soon",
@@ -45,7 +45,7 @@ const items: Item[] = [
         alt=""
         width={28}
         height={28}
-        className="h-7 w-7"
+        className="h-7 w-7 dark:invert"
       />
     ),
     status: "soon",
@@ -63,8 +63,8 @@ export default function FreePage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
-        <header >
+      <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
+        <header>
           <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
             free downloads
           </h1>
@@ -74,10 +74,7 @@ export default function FreePage() {
           </p>
         </header>
 
-        <ul
-          className="mt-14 space-y-3"
-
-        >
+        <ul className="mt-14 space-y-3">
           {items.map((item) => (
             <li key={item.title}>
               <DownloadRow item={item} />
@@ -85,10 +82,7 @@ export default function FreePage() {
           ))}
         </ul>
 
-        <footer
-          className="mt-20 text-[13px] text-muted"
-
-        >
+        <footer className="mt-20 text-[14px] text-muted">
           <p>
             want a specific template?{" "}
             <a
@@ -129,7 +123,7 @@ function DownloadRow({ item }: { item: Item }) {
             </span>
           ) : null}
         </p>
-        <p className="mt-1 text-[13px] leading-snug text-muted">{item.blurb}</p>
+        <p className="mt-1 text-[14px] leading-snug text-muted">{item.blurb}</p>
       </div>
       {!isSoon ? (
         <ArrowUpRight

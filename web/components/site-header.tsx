@@ -22,7 +22,7 @@ export function SiteHeader() {
             className="h-7 w-7 object-cover"
           />
         </span>
-        <span className="inline-flex items-center gap-1.5 text-[13px] tracking-tight">
+        <span className="inline-flex items-center gap-1.5 text-[14px] tracking-tight">
           <ArrowLeft
             aria-hidden
             className="h-3.5 w-3.5 text-muted/70 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
