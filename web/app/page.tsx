@@ -304,7 +304,7 @@ function FreeCard({
       </div>
       <ArrowUpRight
         aria-hidden
-        className="h-4 w-4 text-muted transition-[transform,color] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
+        className="h-4 w-4 text-muted transition-[translate,color] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
         weight="regular"
       />
     </Link>
