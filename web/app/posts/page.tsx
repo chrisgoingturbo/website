@@ -8,7 +8,7 @@ import { getAllPostMeta, type PostMeta } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "writing",
   description:
-    "essays, how-to's, and notes — companions to the godsbattle channel.",
+    "essays, how-to's, and notes. companions to the godsbattle channel.",
 };
 
 function formatShortDate(iso: string): string {
@@ -30,13 +30,13 @@ export default async function PostsIndex() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-[1180px] px-6 pt-16 pb-32 sm:pt-20">
+      <main id="main" className="mx-auto max-w-[1180px] px-6 pt-16 pb-32 sm:pt-20">
         <header className="mx-auto mb-16 max-w-[680px]">
           <h1 className="text-[24px] font-medium tracking-tight text-foreground sm:text-[28px]">
             writing
           </h1>
           <p className="mt-2 text-[14px] leading-[1.65] text-muted">
-            {posts.length} entries — companion notes to the godsbattle channel,
+            {posts.length} entries. companion notes to the godsbattle channel,
             plus the occasional rabbit hole.
           </p>
         </header>
@@ -106,7 +106,7 @@ function PostThumb({ post, eager }: { post: PostMeta; eager: boolean }) {
         {post.date ? (
           <time
             dateTime={post.date}
-            className="mt-1.5 block text-[12px] text-muted tabular-nums"
+            className="mt-1.5 block text-[13px] text-muted tabular-nums"
           >
             {formatShortDate(post.date)}
           </time>

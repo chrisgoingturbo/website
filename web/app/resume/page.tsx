@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
@@ -88,8 +88,8 @@ export default function ResumePage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
-        <header >
+      <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
+        <header>
           <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
             christian obanaka
           </h1>
@@ -115,7 +115,7 @@ export default function ResumePage() {
                       alt=""
                       width={40}
                       height={40}
-                      className="h-10 w-10 object-contain"
+                      className="h-10 w-10 object-contain dark:invert"
                     />
                   </span>
                   <div className="min-w-0 flex-1">
@@ -127,11 +127,11 @@ export default function ResumePage() {
                           role.company
                         )}
                       </p>
-                      <p className="shrink-0 text-[12px] text-muted tabular-nums">
-                        {role.start} — {role.end}
+                      <p className="shrink-0 text-[13px] text-muted tabular-nums">
+                        {role.start} &rarr; {role.end}
                       </p>
                     </div>
-                    <p className="text-[13px] text-muted">{role.title}</p>
+                    <p className="text-[14px] text-muted">{role.title}</p>
                     <p className="mt-2 text-[14px] leading-[1.65] text-foreground/80">
                       {role.blurb}
                     </p>
@@ -160,7 +160,7 @@ export default function ResumePage() {
                 key={area}
                 className="grid grid-cols-[110px_1fr] items-baseline gap-x-4"
               >
-                <dt className="text-[12px] uppercase tracking-[0.12em] text-muted">
+                <dt className="text-[13px] uppercase tracking-[0.12em] text-muted">
                   {area}
                 </dt>
                 <dd className="text-[14px] leading-[1.65] text-foreground/85">
@@ -191,10 +191,7 @@ export default function ResumePage() {
           </ul>
         </Section>
 
-        <footer
-          className="mt-20 border-t border-border pt-8 text-[13px] text-muted"
-
-        >
+        <footer className="mt-20 border-t border-border pt-8 text-[14px] text-muted">
           <p>
             reach out:{" "}
             <ExtLink href="mailto:christian@godsbattle.net">
@@ -216,7 +213,7 @@ function Section({
 }) {
   return (
     <section className="mt-16">
-      <h2 className="mb-5 text-[12px] font-medium uppercase tracking-[0.14em] text-muted">
+      <h2 className="mb-5 text-[13px] font-medium uppercase tracking-[0.14em] text-muted">
         {title}
       </h2>
       {children}

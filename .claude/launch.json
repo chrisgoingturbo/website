@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Next Dev",
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "pnpm",
       "runtimeArgs": ["run", "dev"],
       "cwd": "web",
       "port": 3000

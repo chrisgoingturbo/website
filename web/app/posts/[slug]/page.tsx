@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { SiteHeader } from "@/components/site-header";
 import { YouTubeLite } from "@/components/youtube-lite";
 import { getAllPostSlugs, getPost, getPostNav } from "@/lib/posts";
@@ -37,7 +37,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
     <>
       <SiteHeader />
       <YouTubeLite />
-      <main className="mx-auto max-w-[680px] px-6 pt-14 pb-32 sm:pt-20">
+      <main id="main" className="mx-auto max-w-[680px] px-6 pt-14 pb-32 sm:pt-20">
         <article>
           <header className="mb-10">
             {post.date ? (
@@ -128,7 +128,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
             <div className="mt-8 border-t border-border pt-6">
               <Link
                 href="/posts/"
-                className="group inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground"
+                className="group inline-flex items-center gap-1.5 text-[14px] text-muted hover:text-foreground"
               >
                 <ArrowLeft
                   aria-hidden
@@ -143,7 +143,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
           <footer className="mt-24 border-t border-border pt-8">
             <Link
               href="/posts/"
-              className="group inline-flex items-center gap-1.5 text-[13px] text-foreground/80 hover:text-foreground"
+              className="group inline-flex items-center gap-1.5 text-[14px] text-foreground/80 hover:text-foreground"
             >
               <ArrowLeft
                 aria-hidden

@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/sync-content-images.mjs && next dev",
+    "dev": "node scripts/sync-content-images.mjs && NODE_OPTIONS=--max-old-space-size=4096 next dev",
     "build": "node scripts/sync-content-images.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "sync-images": "node scripts/sync-content-images.mjs"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
     "gray-matter": "^4.0.3",
     "lite-youtube-embed": "^0.3.4",
-    "lucide-react": "^1.16.0",
+    "motion": "^12.39.0",
     "next": "16.2.6",
     "next-themes": "^0.4.6",
     "react": "19.2.4",
@@ -23,7 +25,8 @@
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "unified": "^11.0.5"
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
