@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const webRoot = path.resolve(here, "..");
-const src = path.resolve(webRoot, "..", "content", "posts");
+const src = path.resolve(webRoot, "content", "posts");
 const dst = path.resolve(webRoot, "public", "posts");
 
 async function copyIfStale(from, to) {

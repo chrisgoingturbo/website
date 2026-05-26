@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import { applyShortcodes } from "./shortcodes";
 import { renderMarkdownToReact } from "./markdown";
 
-const POSTS_DIR = path.resolve(process.cwd(), "..", "content", "posts");
+const POSTS_DIR = path.resolve(process.cwd(), "content", "posts");
 
 export type PostMeta = {
   slug: string;
