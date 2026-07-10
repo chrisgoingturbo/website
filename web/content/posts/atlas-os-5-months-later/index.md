@@ -27,15 +27,10 @@ Mainly, you can tweak your PC yourself, provided you know how to troubleshoot an
 Never tweak your PC unnecessarily if you do not know how it affects your PC.
 {{< /alert >}}
 
-Here are some of the videos I found for a full guide on tweaking the PC yourself.
+Here is a video I found for a full guide on tweaking the PC yourself.
 
 {{< youtubeLite id="rcYpbPaaVw4" label="Nico Knows Tech" >}}
 Credit: [Nico Knows Tech](https://www.youtube.com/@NicoKnowsTech)
-
----
-
-{{< youtubeLite id="iBiNfa32AnE" label="Khorvie Tech" >}}
-Credit: [Khorvie Tech](https://www.youtube.com/@khorvietech)
 
 ---
 

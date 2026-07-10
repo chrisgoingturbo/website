@@ -15,11 +15,6 @@ This video covers various **optimization tricks** to get the most out of your lo
 
 ---
 
-## Watch the Video:
-{{< youtubeLite id="eo2GhjJ23vs" label="Speed up your Windows 10 Performance" >}}  
-
----
-
 ## Download Windows 10 Optimization Files
 
 To get started with optimizing your PC, you can download the **Windows 10 FPS Boost Pack** below. This pack contains a set of tools and files that will enhance your system's performance by applying specific optimizations.
