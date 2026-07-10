@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Libre_Baskerville } from "next/font/google";
+import localFont from "next/font/local";
+import { Geist_Mono, Libre_Baskerville } from "next/font/google";
 import { Agentation } from "agentation";
 import { ThemeProvider } from "./providers";
 import "./globals.css";
 
-const geist = Geist({
+// Official Inter 4.1 variable fonts, self-hosted from the rsms/inter release.
+const inter = localFont({
+  src: [
+    { path: "./fonts/InterVariable.woff2", style: "normal" },
+    { path: "./fonts/InterVariable-Italic.woff2", style: "italic" },
+  ],
+  weight: "100 900",
   variable: "--font-sans",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -74,7 +81,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable} ${libreBaskerville.variable}`}
+      className={`${inter.variable} ${geistMono.variable} ${libreBaskerville.variable}`}
     >
       <body>
         <a
