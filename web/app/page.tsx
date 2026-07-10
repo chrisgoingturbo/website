@@ -78,7 +78,7 @@ export default async function Home() {
           and via{" "}
           <ProseLink href="mailto:christian@godsbattle.net">email</ProseLink>{" "}
           or see my code on{" "}
-          <ProseLink href="https://github.com/Godsbattle">
+          <ProseLink href="https://github.com/chrisgoingturbo">
             <BrandIcon
               icon={siGithub}
               size={14}
