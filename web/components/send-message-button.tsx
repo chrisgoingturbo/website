@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { siTelegram } from "simple-icons";
-import { BrandIcon } from "@/components/brand-icon";
+import { Send } from "lucide-react";
 import { ShimmerText } from "@/components/shimmer-text";
 
 const TELEGRAM_URL = "https://t.me/godsbattle";
@@ -21,7 +20,7 @@ export function SendMessageButton() {
       onBlur={() => setHovered(false)}
       className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[15px] font-medium text-background"
     >
-      <BrandIcon icon={siTelegram} size={14} />
+      <Send aria-hidden className="h-[14px] w-[14px]" strokeWidth={2} />
       {hovered ? (
         <ShimmerText
           duration={0.52}
