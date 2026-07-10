@@ -7,9 +7,7 @@ export default function NotFound() {
     <>
       <SiteHeader />
       <main id="main" className="mx-auto max-w-[620px] px-6 pt-20 pb-32 sm:pt-28">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
-          404
-        </p>
+        <p className="text-[13px] text-muted tabular-nums">404</p>
         <h1 className="mt-3 text-[28px] font-medium leading-[1.15] tracking-tight text-foreground">
           this page doesn&rsquo;t live here.
         </h1>

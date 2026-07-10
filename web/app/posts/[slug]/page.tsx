@@ -43,7 +43,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
             {post.date ? (
               <time
                 dateTime={post.date}
-                className="text-[11px] uppercase tracking-[0.14em] text-muted tabular-nums"
+                className="text-[13px] text-muted tabular-nums"
               >
                 {formatDate(post.date)}
               </time>
@@ -91,7 +91,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                   href={`/posts/${nav.newer.slug}/`}
                   className="group block rounded-lg p-3 -mx-3 transition-colors hover:bg-muted/10"
                 >
-                  <p className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.12em] text-muted">
+                  <p className="flex items-center gap-1.5 text-[12px] text-muted">
                     <ArrowLeft
                       aria-hidden
                       className="h-3 w-3 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
@@ -111,7 +111,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                   href={`/posts/${nav.older.slug}/`}
                   className="group block rounded-lg p-3 -mx-3 text-right transition-colors hover:bg-muted/10 sm:text-right"
                 >
-                  <p className="flex items-center justify-end gap-1.5 text-[11px] uppercase tracking-[0.12em] text-muted">
+                  <p className="flex items-center justify-end gap-1.5 text-[12px] text-muted">
                     older
                     <ArrowRight
                       aria-hidden

@@ -191,10 +191,8 @@ em {
   color: var(--foreground);
 }
 .prose h5, .prose h6 {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
   color: var(--muted);
 }
 
@@ -287,9 +285,7 @@ em {
 .prose th {
   font-weight: 500;
   color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 13px;
 }
 
 .prose lite-youtube {

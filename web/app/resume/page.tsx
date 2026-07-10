@@ -160,9 +160,7 @@ export default function ResumePage() {
                 key={area}
                 className="grid grid-cols-[110px_1fr] items-baseline gap-x-4"
               >
-                <dt className="text-[13px] uppercase tracking-[0.12em] text-muted">
-                  {area}
-                </dt>
+                <dt className="text-[13px] text-muted">{area}</dt>
                 <dd className="text-[14px] leading-[1.65] text-foreground/85">
                   {list.join(", ")}
                 </dd>
@@ -213,7 +211,7 @@ function Section({
 }) {
   return (
     <section className="mt-16">
-      <h2 className="mb-5 text-[13px] font-medium uppercase tracking-[0.14em] text-muted">
+      <h2 className="mb-5 text-[15px] font-medium tracking-tight text-foreground">
         {title}
       </h2>
       {children}

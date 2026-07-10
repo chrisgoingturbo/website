@@ -64,9 +64,7 @@ export default function FreePage() {
       <SiteHeader wide />
       <main id="main" className="mx-auto max-w-[1080px] px-6 pt-16 pb-32 sm:pt-20">
         <header className="max-w-[680px]">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-muted">
-            free
-          </p>
+          <p className="text-[13px] text-muted">free</p>
           <h1 className="mt-3 text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
             small things, given away.
           </h1>
@@ -115,19 +113,17 @@ function ProductCard({ product }: { product: Product }) {
     <article className="card-shadow group flex h-full flex-col overflow-hidden rounded-2xl bg-card transition-shadow duration-200 ease-out">
       <div className="relative flex h-[180px] w-full items-center justify-center bg-muted/10">
         {product.thumbnail}
-        <span className="absolute left-4 top-4 rounded-full bg-accent-soft px-2.5 py-[3px] text-[11px] font-medium uppercase tracking-[0.08em] text-accent">
+        <span className="absolute left-4 top-4 rounded-full bg-accent-soft px-2.5 py-[3px] text-[11px] font-medium text-accent">
           free
         </span>
         {isSoon ? (
-          <span className="absolute right-4 top-4 rounded-full border border-border bg-card px-2.5 py-[3px] text-[11px] uppercase tracking-[0.08em] text-muted">
+          <span className="absolute right-4 top-4 rounded-full border border-border bg-card px-2.5 py-[3px] text-[11px] text-muted">
             soon
           </span>
         ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-2 border-t border-border p-5">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-muted tabular-nums">
-          {product.format}
-        </p>
+        <p className="text-[12px] text-muted tabular-nums">{product.format}</p>
         <h2 className="text-[17px] font-medium tracking-tight text-foreground">
           {product.title}
         </h2>

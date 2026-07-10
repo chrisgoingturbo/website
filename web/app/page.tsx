@@ -2,39 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
-import { siGithub, siInstagram, siX, siYoutube } from "simple-icons";
-import { BrandIcon, MailFilledIcon } from "@/components/brand-icon";
+import { siGithub, siYoutube } from "simple-icons";
+import { BrandIcon } from "@/components/brand-icon";
 import { getAllPostMeta, type PostMeta } from "@/lib/posts";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { SendMessageButton } from "@/components/send-message-button";
-
-const socialItems = [
-  {
-    href: "https://x.com/chrisgoingturbo",
-    label: "x / twitter",
-    icon: <BrandIcon icon={siX} size={15} />,
-  },
-  {
-    href: "https://github.com/Godsbattle",
-    label: "github",
-    icon: <BrandIcon icon={siGithub} size={16} />,
-  },
-  {
-    href: "https://youtube.com/godsbattle",
-    label: "youtube",
-    icon: <BrandIcon icon={siYoutube} size={16} />,
-  },
-  {
-    href: "https://instagram.com/chrisgoingturbo",
-    label: "instagram",
-    icon: <BrandIcon icon={siInstagram} size={16} />,
-  },
-  {
-    href: "mailto:christian@godsbattle.net",
-    label: "email",
-    icon: <MailFilledIcon className="h-4 w-4" />,
-  },
-];
 
 export default async function Home() {
   const allPosts = await getAllPostMeta();
@@ -42,49 +14,28 @@ export default async function Home() {
 
   return (
     <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-24">
-      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
-        <div className="flex items-center gap-4">
-          <Image
-            src="/avatar.webp"
-            alt=""
-            width={56}
-            height={56}
-            priority
-            className="h-14 w-14 rounded-full ring-1 ring-border"
-            style={{ viewTransitionName: "site-avatar" }}
-          />
-          <div className="leading-tight">
-            <h1 className="text-[18px] font-medium tracking-tight text-foreground">
-              Christian Obanaka{" "}
-              <span className="font-normal text-muted">(a.k.a chrisgoingturbo)</span>
-            </h1>
-            <p className="mt-1 text-[15px] font-medium text-muted">
-              head of community at thePropTrade
-            </p>
-          </div>
+      <header className="flex items-center gap-4">
+        <Image
+          src="/avatar.webp"
+          alt=""
+          width={56}
+          height={56}
+          priority
+          className="h-14 w-14 rounded-full ring-1 ring-border"
+          style={{ viewTransitionName: "site-avatar" }}
+        />
+        <div className="leading-tight">
+          <h1 className="text-[18px] font-medium tracking-tight text-foreground">
+            Christian Obanaka{" "}
+            <span className="font-normal text-muted">(a.k.a chrisgoingturbo)</span>
+          </h1>
+          <p className="mt-1 text-[15px] font-medium text-muted">
+            head of community at thePropTrade
+          </p>
         </div>
-        <nav aria-label="social links" className="flex items-center gap-0.5 -mx-2.5 sm:mx-0">
-          {socialItems.map((item) => {
-            const external = item.href.startsWith("http");
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                aria-label={item.label}
-                title={item.label}
-                {...(external
-                  ? { target: "_blank", rel: "noreferrer noopener" }
-                  : {})}
-                className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors duration-200 hover:bg-foreground/[0.04] hover:text-foreground"
-              >
-                {item.icon}
-              </a>
-            );
-          })}
-        </nav>
       </header>
 
-      <section className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground">
+      <section className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground/80">
         <p>
           i&rsquo;m head of community at{" "}
           <ProseLink href="https://theproptrade.com">
@@ -124,8 +75,17 @@ export default async function Home() {
           <ProseLink href="https://x.com/chrisgoingturbo">
             @chrisgoingturbo
           </ProseLink>{" "}
-          or via{" "}
-          <ProseLink href="mailto:christian@godsbattle.net">email</ProseLink>
+          and via{" "}
+          <ProseLink href="mailto:christian@godsbattle.net">email</ProseLink>{" "}
+          or see my code on{" "}
+          <ProseLink href="https://github.com/Godsbattle">
+            <BrandIcon
+              icon={siGithub}
+              size={14}
+              className="-mt-px inline-block self-center text-foreground/85"
+            />
+            github
+          </ProseLink>
           .
         </p>
       </section>
@@ -311,9 +271,7 @@ function FeaturedPost({ post }: { post: PostMeta }) {
         ) : null}
       </div>
       <div className="px-1 sm:px-0">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-muted">
-          latest
-        </p>
+        <p className="text-[12px] text-muted">latest</p>
         <p className="mt-1.5 text-[16px] font-medium leading-snug tracking-tight text-foreground group-hover:text-foreground/75">
           {post.displayTitle}
         </p>
