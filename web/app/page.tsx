@@ -1,44 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowUpRight, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { siGithub, siInstagram, siX, siYoutube } from "simple-icons";
+import { BrandIcon, MailFilledIcon } from "@/components/brand-icon";
 import { getAllPostMeta, type PostMeta } from "@/lib/posts";
-import {
-  GitHubIcon,
-  InstagramIcon,
-  MailFilledIcon,
-  XIcon,
-  YouTubeIcon,
-} from "@/components/brand-icons";
-import { SocialMenu, type SocialMenuItem } from "@/components/social-menu";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { SendMessageButton } from "@/components/send-message-button";
 
-const socialItems: SocialMenuItem[] = [
+const socialItems = [
   {
     href: "https://x.com/chrisgoingturbo",
     label: "x / twitter",
-    icon: <XIcon className="h-3 w-3" />,
+    icon: <BrandIcon icon={siX} size={15} />,
   },
   {
     href: "https://github.com/Godsbattle",
     label: "github",
-    icon: <GitHubIcon className="h-3.5 w-3.5" />,
+    icon: <BrandIcon icon={siGithub} size={16} />,
   },
   {
     href: "https://youtube.com/godsbattle",
     label: "youtube",
-    icon: <YouTubeIcon className="h-3.5 w-3.5" />,
+    icon: <BrandIcon icon={siYoutube} size={16} />,
   },
   {
     href: "https://instagram.com/chrisgoingturbo",
     label: "instagram",
-    icon: <InstagramIcon className="h-3.5 w-3.5" />,
+    icon: <BrandIcon icon={siInstagram} size={16} />,
   },
   {
     href: "mailto:christian@godsbattle.net",
     label: "email",
-    icon: <MailFilledIcon className="h-3.5 w-3.5" />,
+    icon: <MailFilledIcon className="h-4 w-4" />,
   },
 ];
 
@@ -48,7 +42,7 @@ export default async function Home() {
 
   return (
     <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-24">
-      <header className="animate-enter flex items-center justify-between gap-4" style={{ "--enter-stagger": 0 } as React.CSSProperties}>
+      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
         <div className="flex items-center gap-4">
           <Image
             src="/avatar.webp"
@@ -69,10 +63,28 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <SocialMenu items={socialItems} />
+        <nav aria-label="social links" className="flex items-center gap-0.5 -mx-2.5 sm:mx-0">
+          {socialItems.map((item) => {
+            const external = item.href.startsWith("http");
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                aria-label={item.label}
+                title={item.label}
+                {...(external
+                  ? { target: "_blank", rel: "noreferrer noopener" }
+                  : {})}
+                className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors duration-200 hover:bg-foreground/[0.04] hover:text-foreground"
+              >
+                {item.icon}
+              </a>
+            );
+          })}
+        </nav>
       </header>
 
-      <section className="animate-enter mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground" style={{ "--enter-stagger": 1 } as React.CSSProperties}>
+      <section className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground">
         <p>
           i&rsquo;m head of community at{" "}
           <ProseLink href="https://theproptrade.com">
@@ -104,7 +116,7 @@ export default async function Home() {
           from 5k to 10k in five months, and worked with{" "}
           <Link
             href="/resume/"
-            className="font-semibold text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground"
+            className="font-medium text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground"
           >
             a few other companies
           </Link>{" "}
@@ -113,20 +125,17 @@ export default async function Home() {
             @chrisgoingturbo
           </ProseLink>{" "}
           or via{" "}
-          <ProseLink href="mailto:christian@godsbattle.net">
-            <MailFilledIcon className="-mt-px inline-block h-[14px] w-[14px] text-foreground/85" />
-            email
-          </ProseLink>
+          <ProseLink href="mailto:christian@godsbattle.net">email</ProseLink>
           .
         </p>
       </section>
 
-      <div className="animate-enter mt-8 flex flex-wrap items-center gap-3" style={{ "--enter-stagger": 2 } as React.CSSProperties}>
+      <div className="mt-8 flex flex-wrap items-center gap-3">
         <SendMessageButton />
         <CopyEmailButton />
       </div>
 
-      <section aria-labelledby="projects-heading" className="animate-enter mt-20" style={{ "--enter-stagger": 3 } as React.CSSProperties}>
+      <section aria-labelledby="projects-heading" className="mt-20">
         <h2 id="projects-heading" className="text-[15px] font-medium tracking-tight text-foreground">
           projects
         </h2>
@@ -135,19 +144,27 @@ export default async function Home() {
             href="/trackmyprop/"
             name="trackmyprop"
             subtitle="portfolio tracker for prop firm traders."
-            logoSrc="/trackmyprop-logo.svg"
+            logo={
+              <Image
+                src="/trackmyprop-logo.svg"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain dark:invert"
+              />
+            }
           />
           <ProjectCard
             href="https://youtube.com/godsbattle"
             external
             name="godsbattle"
             subtitle="pc optimization & tech tutorials on youtube."
-            logoSrc="/godsbattle-logo.svg"
+            logo={<BrandIcon icon={siYoutube} size={24} />}
           />
         </div>
       </section>
 
-      <section aria-labelledby="writing-heading" className="animate-enter mt-20" style={{ "--enter-stagger": 4 } as React.CSSProperties}>
+      <section aria-labelledby="writing-heading" className="mt-20">
         <div className="flex items-baseline justify-between">
           <h2 id="writing-heading" className="text-[15px] font-medium tracking-tight text-foreground">
             writing
@@ -160,7 +177,7 @@ export default async function Home() {
             <ArrowUpRight
               aria-hidden
               className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              strokeWidth={1.75}
+              strokeWidth={2}
             />
           </Link>
         </div>
@@ -185,53 +202,6 @@ export default async function Home() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section aria-labelledby="resources-heading" className="animate-enter mt-20" style={{ "--enter-stagger": 5 } as React.CSSProperties}>
-        <div className="flex items-baseline justify-between">
-          <h2 id="resources-heading" className="text-[15px] font-medium tracking-tight text-foreground">
-            resources
-          </h2>
-          <Link
-            href="/free/"
-            className="group inline-flex items-center gap-1 text-[14px] text-muted hover:text-foreground"
-          >
-            browse all
-            <ArrowUpRight
-              aria-hidden
-              className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              strokeWidth={1.75}
-            />
-          </Link>
-        </div>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          <FreeCard
-            href="/free/"
-            title="chart colors"
-            icon={
-              <Image
-                src="/tradingview-logo.svg"
-                alt=""
-                width={36}
-                height={36}
-                className="h-9 w-9 dark:invert"
-              />
-            }
-          />
-          <FreeCard
-            href="/free/"
-            title="notion templates"
-            icon={
-              <Image
-                src="/notion-logo.svg"
-                alt=""
-                width={28}
-                height={28}
-                className="h-7 w-7 dark:invert"
-              />
-            }
-          />
-        </div>
       </section>
 
       <footer className="mt-24 border-t border-border pt-10">
@@ -269,45 +239,10 @@ function ProseLink({ href, children }: { href: string; children: ReactNode }) {
         : {})}
       className={`${
         isTextOnly ? "" : "inline-flex items-baseline gap-1 "
-      }font-semibold text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground`}
+      }font-medium text-foreground underline underline-offset-[3px] decoration-border hover:decoration-foreground`}
     >
       {children}
     </a>
-  );
-}
-
-function FreeCard({
-  href,
-  title,
-  icon,
-}: {
-  href: string;
-  title: string;
-  icon: ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="card-shadow group flex items-center gap-3 rounded-2xl bg-card p-3 transition-shadow duration-200 ease-out"
-    >
-      <span
-        aria-hidden
-        className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-muted/15 text-foreground/85"
-      >
-        {icon}
-      </span>
-      <div className="min-w-0 flex-1 leading-snug">
-        <p className="text-[14.5px] font-medium tracking-tight text-foreground">
-          {title}
-        </p>
-        <p className="mt-0.5 text-[12px] text-accent">free</p>
-      </div>
-      <ArrowUpRight
-        aria-hidden
-        className="h-4 w-4 text-muted transition-[translate,color] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
-        weight="regular"
-      />
-    </Link>
   );
 }
 
@@ -315,13 +250,13 @@ function ProjectCard({
   href,
   name,
   subtitle,
-  logoSrc,
+  logo,
   external,
 }: {
   href: string;
   name: string;
   subtitle: string;
-  logoSrc: string;
+  logo: ReactNode;
   external?: boolean;
 }) {
   const props = external
@@ -332,33 +267,26 @@ function ProjectCard({
     <Wrap
       href={href}
       {...props}
-      className="card-shadow group block overflow-hidden rounded-2xl bg-background p-1"
+      className="card-shadow group block rounded-2xl bg-background p-1"
     >
-      <div className="flex w-full flex-col rounded-xl border border-foreground/[0.08] bg-card">
-        <div className="flex h-[132px] w-full items-center justify-center">
-          <Image
-            src={logoSrc}
-            alt=""
-            width={80}
-            height={80}
-            className="h-20 w-20 object-contain dark:invert"
-          />
-        </div>
-        <div className="flex w-full flex-col px-5 pb-5 pt-0">
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-[15px] font-medium tracking-tight text-foreground">
-              {name}
-            </p>
-            <CaretRight
-              aria-hidden
-              className="h-4 w-4 -translate-x-1 text-foreground opacity-0 transition-[opacity,translate] duration-[220ms] ease-out group-hover:translate-x-0 group-hover:opacity-100"
-              weight="bold"
-            />
-          </div>
-          <p className="mt-1 min-h-[2lh] text-[14px] leading-snug text-muted">
-            {subtitle}
+      <div className="flex items-center gap-3 rounded-xl border border-foreground/[0.08] bg-card p-2.5">
+        <span
+          aria-hidden
+          className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-muted/15 text-foreground/85"
+        >
+          {logo}
+        </span>
+        <div className="min-w-0 flex-1 leading-snug">
+          <p className="text-[14.5px] font-medium tracking-tight text-foreground">
+            {name}
           </p>
+          <p className="mt-0.5 text-[13px] text-muted">{subtitle}</p>
         </div>
+        <ChevronRight
+          aria-hidden
+          className="h-4 w-4 shrink-0 text-muted transition-[translate,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:text-foreground"
+          strokeWidth={2}
+        />
       </div>
     </Wrap>
   );
@@ -368,15 +296,15 @@ function FeaturedPost({ post }: { post: PostMeta }) {
   return (
     <Link
       href={`/posts/${post.slug}/`}
-      className="card-shadow group mt-5 grid gap-4 overflow-hidden rounded-2xl bg-card p-3 transition-shadow duration-200 ease-out sm:grid-cols-[160px_1fr] sm:items-center sm:gap-5"
+      className="card-shadow group mt-5 grid gap-4 overflow-hidden rounded-2xl bg-card p-3 transition-shadow duration-200 ease-out sm:grid-cols-[220px_1fr] sm:items-center sm:gap-5"
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted/10 sm:aspect-[4/3]">
+      <div className="relative aspect-video overflow-hidden rounded-xl bg-muted/10">
         {post.hasFeaturedImage ? (
           <Image
             src={`/posts/${post.slug}/featured.webp`}
             alt=""
             fill
-            sizes="(min-width: 640px) 160px, 100vw"
+            sizes="(min-width: 640px) 220px, 100vw"
             className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
             priority
           />

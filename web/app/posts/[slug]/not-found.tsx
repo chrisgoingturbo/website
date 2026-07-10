@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 
 export default function NotFound() {
@@ -24,7 +24,7 @@ export default function NotFound() {
             <ArrowLeft
               aria-hidden
               className="h-3.5 w-3.5 text-muted/70 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
-              strokeWidth={1.75}
+              strokeWidth={2}
             />
             all writing
           </Link>

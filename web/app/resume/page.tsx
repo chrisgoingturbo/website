@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
@@ -234,7 +234,7 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
         <ArrowUpRight
           aria-hidden
           className="h-3 w-3 self-center text-muted transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
-          strokeWidth={1.75}
+          strokeWidth={2}
         />
       ) : null}
     </a>

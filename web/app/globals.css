@@ -35,7 +35,6 @@
   --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --animate-menu-enter: menu-enter 180ms cubic-bezier(0.2, 0.9, 0.3, 1.1);
 }
 
 html {
@@ -55,7 +54,11 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-p {
+/* These element rules end up unlayered (the Tailwind postcss plugin unwraps
+   author `@layer base` blocks), so they'd silently beat layered utilities like
+   `truncate` — its white-space: nowrap loses to text-wrap on the longhand.
+   Guard explicitly instead. */
+p:not(.truncate) {
   text-wrap: pretty;
 }
 
@@ -70,18 +73,10 @@ em {
   color: var(--accent);
 }
 
-:focus-visible:not([role="menuitem"], [role="menu"], [role="menu"] *) {
+:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: 3px;
   border-radius: inherit;
-}
-
-/* Rapid clicks on a dropdown trigger fire mousedown on the document root
-   (Radix's dismiss overlay), not the button — preventDefault on the button's
-   own onMouseDown never runs. Disable text selection page-wide while any
-   menu is open so the selection anchor can't land in the body paragraph. */
-:root:has(button[aria-haspopup="menu"][data-state="open"]) {
-  user-select: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -92,52 +87,6 @@ em {
   }
   a:active, button:active, [role="button"]:active {
     transform: scale(0.97);
-  }
-}
-
-/* Menu / disclosure entrance — translate + opacity, GPU-composited.
-   Used by <SocialMenu>. Exit is instant since <details> doesn't animate close.
-   Registered as the `animate-menu-enter` Tailwind utility via @theme above. */
-@keyframes menu-enter {
-  from {
-    opacity: 0;
-    transform: translateY(-4px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-menu-enter {
-    animation: none;
-  }
-}
-
-/* Stagger fade-up — translate + opacity only.
-   Composited on GPU, no paint cost, no mid-animation visual breakage. */
-@keyframes enter-up {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-enter {
-  animation: enter-up 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--enter-stagger, 0) * 60ms);
-  will-change: opacity, transform;
-}
-.animate-enter > * {
-  /* hint to browser that ancestor compositing is fine */
-  transform: translateZ(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-enter {
-    animation: none;
   }
 }
 

@@ -61,13 +61,13 @@ const products: Product[] = [
 export default function FreePage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader wide />
       <main id="main" className="mx-auto max-w-[1080px] px-6 pt-16 pb-32 sm:pt-20">
-        <header className="mx-auto max-w-[680px]">
+        <header className="max-w-[680px]">
           <p className="text-[11px] uppercase tracking-[0.16em] text-muted">
             free
           </p>
-          <h1 className="mt-3 text-[28px] font-medium tracking-tight text-foreground sm:text-[34px]">
+          <h1 className="mt-3 text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
             small things, given away.
           </h1>
           <p className="mt-3 text-[15px] leading-[1.65] text-muted">
@@ -83,7 +83,7 @@ export default function FreePage() {
           ))}
         </ul>
 
-        <footer className="mx-auto mt-20 max-w-[680px] text-[14px] text-muted">
+        <footer className="mt-20 max-w-[680px] text-[14px] text-muted">
           <p>
             want a specific template?{" "}
             <a

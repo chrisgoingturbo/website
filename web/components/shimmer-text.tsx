@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Variant =
@@ -69,7 +69,8 @@ export function ShimmerText({
   return (
     <span className="group inline-block overflow-hidden">
       <span className="inline-block">
-        <motion.span
+        <LazyMotion features={domAnimation} strict>
+          <m.span
           className={cn(
             "inline-block [--shimmer-contrast:rgba(255,255,255,0.6)] dark:[--shimmer-contrast:rgba(0,0,0,0.5)]",
             variantMap[variant],
@@ -98,9 +99,10 @@ export function ShimmerText({
             repeatDelay: 1.5,
             ease: "linear",
           }}
-        >
-          <span>{children}</span>
-        </motion.span>
+          >
+            <span>{children}</span>
+          </m.span>
+        </LazyMotion>
       </span>
     </span>
   );

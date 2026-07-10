@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PaperPlaneTilt } from "@phosphor-icons/react";
 import { ShimmerText } from "@/components/shimmer-text";
 
 const TELEGRAM_URL = "https://t.me/godsbattle";
@@ -20,7 +19,6 @@ export function SendMessageButton() {
       onBlur={() => setHovered(false)}
       className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[15px] font-medium text-background"
     >
-      <PaperPlaneTilt className="h-[14px] w-[14px]" weight="fill" aria-hidden />
       {hovered ? (
         <ShimmerText
           duration={0.52}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { YouTubeLite } from "@/components/youtube-lite";
 import { getAllPostSlugs, getPost, getPostNav } from "@/lib/posts";
@@ -95,7 +95,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                     <ArrowLeft
                       aria-hidden
                       className="h-3 w-3 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
-                      strokeWidth={1.75}
+                      strokeWidth={2}
                     />
                     newer
                   </p>
@@ -116,7 +116,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                     <ArrowRight
                       aria-hidden
                       className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5"
-                      strokeWidth={1.75}
+                      strokeWidth={2}
                     />
                   </p>
                   <p className="mt-1.5 text-[14px] font-medium leading-snug text-foreground/85 group-hover:text-foreground">
@@ -133,7 +133,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                 <ArrowLeft
                   aria-hidden
                   className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
-                  strokeWidth={1.75}
+                  strokeWidth={2}
                 />
                 all writing
               </Link>
@@ -148,7 +148,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
               <ArrowLeft
                 aria-hidden
                 className="h-3.5 w-3.5 text-muted/70 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
-                strokeWidth={1.75}
+                strokeWidth={2}
               />
               all writing
             </Link>
