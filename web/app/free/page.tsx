@@ -122,7 +122,7 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         ) : null}
       </div>
-      <div className="flex flex-1 flex-col gap-2 border-t border-border p-5">
+      <div className="flex flex-1 flex-col gap-2 p-5">
         <p className="text-[12px] text-muted tabular-nums">{product.format}</p>
         <h2 className="text-[17px] font-medium tracking-tight text-foreground">
           {product.title}

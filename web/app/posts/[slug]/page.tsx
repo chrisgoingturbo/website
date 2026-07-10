@@ -83,7 +83,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
         {(nav.older || nav.newer) ? (
           <nav
             aria-label="more posts"
-            className="mt-24 border-t border-border pt-8"
+            className="mt-28"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               {nav.newer ? (
@@ -125,7 +125,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                 </Link>
               ) : null}
             </div>
-            <div className="mt-8 border-t border-border pt-6">
+            <div className="mt-12">
               <Link
                 href="/posts/"
                 className="group inline-flex items-center gap-1.5 text-[14px] text-muted hover:text-foreground"
@@ -140,7 +140,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
             </div>
           </nav>
         ) : (
-          <footer className="mt-24 border-t border-border pt-8">
+          <footer className="mt-28">
             <Link
               href="/posts/"
               className="group inline-flex items-center gap-1.5 text-[14px] text-foreground/80 hover:text-foreground"

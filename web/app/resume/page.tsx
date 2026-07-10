@@ -189,7 +189,7 @@ export default function ResumePage() {
           </ul>
         </Section>
 
-        <footer className="mt-20 border-t border-border pt-8 text-[14px] text-muted">
+        <footer className="mt-24 text-[14px] text-muted">
           <p>
             reach out:{" "}
             <ExtLink href="mailto:christian@godsbattle.net">

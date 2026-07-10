@@ -142,7 +142,7 @@ export default async function Home() {
           </Link>
         </div>
         {posts[0] ? <FeaturedPost post={posts[0]} /> : null}
-        <ul className="mt-3 divide-y divide-border">
+        <ul className="mt-2">
           {posts.slice(1).map((p) => (
             <li key={p.slug}>
               <Link
@@ -164,24 +164,10 @@ export default async function Home() {
         </ul>
       </section>
 
-      <footer className="mt-24 border-t border-border pt-10">
-        <div className="grid gap-8 sm:grid-cols-[1fr_auto]">
-          <nav aria-label="footer" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
-            <Link href="/" className="text-foreground/80 hover:text-foreground">home</Link>
-            <Link href="/posts/" className="text-foreground/80 hover:text-foreground">writing</Link>
-            <Link href="/resume/" className="text-foreground/80 hover:text-foreground">resume</Link>
-            <Link href="/free/" className="text-foreground/80 hover:text-foreground">free</Link>
-            <a
-              href="mailto:christian@godsbattle.net"
-              className="text-foreground/80 hover:text-foreground"
-            >
-              contact
-            </a>
-          </nav>
-          <p className="text-[13px] text-muted tabular-nums sm:text-right">
-            © {new Date().getUTCFullYear()} godsbattle.net
-          </p>
-        </div>
+      <footer className="mt-32">
+        <p className="text-[13px] text-muted tabular-nums">
+          © {new Date().getUTCFullYear()} godsbattle.net
+        </p>
       </footer>
     </main>
   );
