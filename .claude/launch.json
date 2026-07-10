@@ -6,13 +6,8 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["run", "dev"],
       "cwd": "web",
-      "port": 3000
-    },
-    {
-      "name": "Hugo Dev Server",
-      "runtimeExecutable": "hugo",
-      "runtimeArgs": ["server", "--buildDrafts", "--disableFastRender"],
-      "port": 1313
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
