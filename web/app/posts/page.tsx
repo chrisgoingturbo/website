@@ -58,7 +58,7 @@ function PostThumb({ post, eager }: { post: PostMeta; eager: boolean }) {
   return (
     <Link
       href={`/posts/${post.slug}/`}
-      className="group block focus-visible:outline-none"
+      className="group block"
     >
       <ViewTransition name={`post-hero-${post.slug}`}>
         <div className="relative overflow-hidden rounded-xl ring-1 ring-foreground/[0.06]">

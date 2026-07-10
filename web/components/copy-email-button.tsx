@@ -48,7 +48,7 @@ export function CopyEmailButton() {
       onClick={handleCopy}
       aria-label={copied ? "email address copied" : "copy email address"}
       aria-live="polite"
-      className="inline-flex min-w-[134px] items-center justify-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[15px] font-medium text-foreground transition-colors duration-200 hover:bg-foreground/[0.04]"
+      className="inline-flex min-w-[134px] items-center justify-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[15px] font-medium text-foreground hover:bg-foreground/[0.04]"
     >
       <span aria-hidden className="relative h-[14px] w-[14px]">
         <LazyMotion features={domAnimation} strict>

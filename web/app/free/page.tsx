@@ -131,7 +131,7 @@ function ProductCard({ product }: { product: Product }) {
         <div className="mt-3 flex items-center justify-between">
           <a
             href={cta.href}
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background transition-colors duration-200 hover:bg-foreground/85"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background hover:bg-foreground/85"
           >
             {cta.label}
           </a>

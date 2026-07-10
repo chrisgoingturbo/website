@@ -147,7 +147,7 @@ export default async function Home() {
             <li key={p.slug}>
               <Link
                 href={`/posts/${p.slug}/`}
-                className="group -mx-2 flex items-baseline justify-between gap-4 rounded-2xl px-2 py-3.5 transition-colors duration-200 hover:bg-foreground/[0.04]"
+                className="group -mx-2 flex items-baseline justify-between gap-4 rounded-2xl px-2 py-3.5 hover:bg-foreground/[0.04]"
               >
                 <p className="min-w-0 flex-1 truncate text-[15px] font-medium tracking-tight text-foreground">
                   {p.displayTitle}

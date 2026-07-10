@@ -37,56 +37,58 @@
   --font-mono: var(--font-mono);
 }
 
-html {
-  color-scheme: light dark;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  font-feature-settings: "cv01";
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-h1, h2, h3, h4 {
-  text-wrap: balance;
-}
-
-/* These element rules are unlayered, so they beat layered utilities like
-   `truncate` — its white-space: nowrap loses to text-wrap on the longhand.
-   Guard explicitly, or move the rule into @layer base (author layer blocks
-   survive the tailwind plugin intact — verified on 4.3.0). */
-p:not(.truncate) {
-  text-wrap: pretty;
-}
-
-em {
-  font-family: var(--font-serif-italic), ui-serif, Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-}
-
-::selection {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-:focus-visible {
-  outline: 2px solid var(--foreground);
-  outline-offset: 3px;
-  border-radius: inherit;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a, button, [role="button"] {
-    transition-property: color, background-color, border-color, opacity, transform, box-shadow;
-    transition-duration: 180ms;
-    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+/* Element defaults live in @layer base (which sorts before utilities) so
+   any utility class wins over them. Unlayered they'd silently beat
+   utilities on competing longhands — `p { text-wrap: pretty }` once broke
+   `.truncate`, whose white-space: nowrap loses on the longhand. */
+@layer base {
+  html {
+    color-scheme: light dark;
   }
-  a:active, button:active, [role="button"]:active {
-    transform: scale(0.97);
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "cv01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  em {
+    font-family: var(--font-serif-italic), ui-serif, Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 3px;
+    border-radius: inherit;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a, button, [role="button"] {
+      transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+      transition-duration: 180ms;
+      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    a:active, button:active, [role="button"]:active {
+      transform: scale(0.97);
+    }
   }
 }
 

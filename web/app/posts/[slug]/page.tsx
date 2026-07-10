@@ -89,7 +89,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
               {nav.newer ? (
                 <Link
                   href={`/posts/${nav.newer.slug}/`}
-                  className="group block rounded-lg p-3 -mx-3 transition-colors hover:bg-muted/10"
+                  className="group block rounded-lg p-3 -mx-3 hover:bg-muted/10"
                 >
                   <p className="flex items-center gap-1.5 text-[12px] text-muted">
                     <ArrowLeft
@@ -109,7 +109,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
               {nav.older ? (
                 <Link
                   href={`/posts/${nav.older.slug}/`}
-                  className="group block rounded-lg p-3 -mx-3 text-right transition-colors hover:bg-muted/10 sm:text-right"
+                  className="group block rounded-lg p-3 -mx-3 text-right hover:bg-muted/10 sm:text-right"
                 >
                   <p className="flex items-center justify-end gap-1.5 text-[12px] text-muted">
                     older
