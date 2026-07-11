@@ -1,9 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { NextConfig } from "next";
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-
-initOpenNextCloudflareForDev();
 
 // Pin Turbopack to /web/ — there's a stub package-lock.json at the repo root
 // for Vercel framework detection, which Next.js otherwise infers as the
@@ -17,7 +14,7 @@ const nextConfig: NextConfig = {
   },
   // Markdown posts are read at runtime via fs.readdir; they aren't statically
   // imported so Next won't trace them. Force-include the whole content/ tree
-  // so the Worker bundle ships with the posts.
+  // so the deployment bundle ships with the posts.
   outputFileTracingIncludes: {
     "*": ["./content/**/*"],
   },

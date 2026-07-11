@@ -12,10 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Generated deploy output (OpenNext / wrangler):
+    // Legacy generated deployment artifacts:
     ".open-next/**",
     ".wrangler/**",
-    "cloudflare-env.d.ts",
   ]),
 ]);
 

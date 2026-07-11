@@ -36,7 +36,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-# cloudflare / opennext
+# legacy generated deployment artifacts
 .open-next
 .wrangler
 .dev.vars

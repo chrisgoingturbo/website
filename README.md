@@ -2,7 +2,7 @@
 
 my personal corner of the internet — portfolio, writing, and the occasional rabbit hole.
 
-**stack:** next.js 16 · react 19 · tailwind v4 · self-hosted inter · deployed to cloudflare workers via [opennext](https://opennext.js.org/cloudflare)
+**stack:** next.js 16 · react 19 · tailwind v4 · self-hosted inter · deployed to vercel
 
 ## structure
 
@@ -24,7 +24,7 @@ pnpm dev        # http://localhost:3000
 
 ## deploy
 
-pushes to `main` deploy automatically via github actions. `pnpm deploy` from `web/` does the same thing manually.
+pushes to `main` deploy automatically via vercel.
 
 ## notes
 

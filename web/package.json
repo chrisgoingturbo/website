@@ -7,13 +7,9 @@
     "build": "node scripts/sync-content-images.mjs && next build",
     "start": "next start",
     "lint": "eslint",
-    "sync-images": "node scripts/sync-content-images.mjs",
-    "preview": "node scripts/sync-content-images.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "node scripts/sync-content-images.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "sync-images": "node scripts/sync-content-images.mjs"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.19.11",
     "gray-matter": "^4.0.3",
     "lite-youtube-embed": "^0.3.4",
     "lucide-react": "^1.24.0",
@@ -41,7 +37,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "wrangler": "^4.94.0"
+    "typescript": "^5"
   }
 }
