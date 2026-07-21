@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "lite-youtube-embed/src/lite-yt-embed.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

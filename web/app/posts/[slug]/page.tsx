@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { YouTubeLite } from "@/components/youtube-lite";
 import { getAllPostSlugs, getPost, getPostNav } from "@/lib/posts";
+import "lite-youtube-embed/src/lite-yt-embed.css";
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();

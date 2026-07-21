@@ -85,7 +85,12 @@ export default async function Home() {
           </p>
           <p>
             I&rsquo;m currently building{" "}
-            <strong className="inline-flex items-center gap-1 align-[-0.075em] font-medium text-foreground">
+            <a
+              href="https://trackmyprop.app"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-1 align-[-0.075em] font-medium text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
+            >
               <Image
                 src="/trackmyprop-logo.svg"
                 alt=""
@@ -94,7 +99,7 @@ export default async function Home() {
                 className="size-[15px] shrink-0 object-contain"
               />
               trackmyprop
-            </strong>{" "}
+            </a>{" "}
             &mdash; a desktop trading workspace for managing prop-firm accounts, rules,
             trades, journals, and payouts.
           </p>
@@ -103,6 +108,7 @@ export default async function Home() {
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Link
             href="/work/trackmyprop/"
+            prefetch={false}
             className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
           >
             View trackmyprop case study
@@ -116,6 +122,7 @@ export default async function Home() {
           </a>
           <Link
             href="/resume/"
+            prefetch={false}
             className="inline-flex min-h-11 items-center px-2 py-2 text-[14px] font-medium text-muted hover:text-foreground"
           >
             View résumé
@@ -133,6 +140,7 @@ export default async function Home() {
 
         <Link
           href="/work/trackmyprop/"
+          prefetch={false}
           className="card-shadow group mt-5 block overflow-hidden rounded-2xl bg-card p-2"
         >
           <div className="overflow-hidden rounded-xl bg-muted/10 ring-1 ring-foreground/[0.06]">
@@ -211,6 +219,7 @@ export default async function Home() {
         </ol>
         <Link
           href="/resume/"
+          prefetch={false}
           className="group mt-4 inline-flex items-center gap-1.5 text-[14px] font-medium text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
         >
           Full experience and capabilities
@@ -243,6 +252,7 @@ export default async function Home() {
           </a>
           <Link
             href="/posts/"
+            prefetch={false}
             className="font-medium text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
           >
             Writing archive ({allPosts.length})
