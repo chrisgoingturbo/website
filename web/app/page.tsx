@@ -50,7 +50,8 @@ export default async function Home() {
           </ProseLink>
           , a prop firm built on real market experience and transparent rules,
           where i scaled the community, drove organic engagement, and shaped an
-          intimate space traders <em>actually feel</em> at home in. i&rsquo;m now
+          intimate space traders <em>actually feel</em>{" "}
+          at home in. i&rsquo;m now
           actively seeking new opportunities in community, growth, and web
           development.
         </p>
