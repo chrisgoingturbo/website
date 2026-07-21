@@ -61,12 +61,19 @@ export default async function Home() {
             <p className="text-[17px] font-medium text-foreground">
               Christian Obanaka
             </p>
-            <p className="mt-1 text-[14px] text-muted">chrisgoingturbo</p>
+            <a
+              href="https://x.com/chrisgoingturbo"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mt-1 inline-flex text-[14px] text-muted underline decoration-transparent underline-offset-[3px] hover:text-foreground hover:decoration-border"
+            >
+              chrisgoingturbo
+            </a>
           </div>
         </div>
 
         <h1 className="mt-10 max-w-[680px] text-balance text-[34px] font-medium leading-[1.12] text-foreground sm:text-[44px]">
-          Design engineer for trading and fintech products.
+          Design engineer.
         </h1>
         <div className="mt-6 max-w-[690px] space-y-4 text-pretty text-[16px] leading-[1.75] text-foreground/80 sm:text-[17px]">
           <p>
@@ -76,8 +83,8 @@ export default async function Home() {
             the businesses supporting them.
           </p>
           <p>
-            I&rsquo;m currently building <strong className="font-medium text-foreground">trackmyprop</strong>&mdash;a
-            desktop trading workspace for managing prop-firm accounts, rules,
+            I&rsquo;m currently building <strong className="font-medium text-foreground">trackmyprop</strong>{" "}
+            &mdash; a desktop trading workspace for managing prop-firm accounts, rules,
             trades, journals, and payouts.
           </p>
         </div>

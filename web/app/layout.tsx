@@ -53,21 +53,12 @@ export const metadata: Metadata = {
     firstName: "Christian",
     lastName: "Obanaka",
     username: "chrisgoingturbo",
-    images: [
-      {
-        url: "/avatar.webp",
-        width: 256,
-        height: 256,
-        alt: "christian obanaka",
-      },
-    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     creator: "@chrisgoingturbo",
-    images: ["/avatar.webp"],
   },
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,

@@ -18,20 +18,11 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: "trackmyprop — product design and engineering case study",
     description: PAGE_DESCRIPTION,
-    images: [
-      {
-        url: "/work/trackmyprop/overview.png",
-        width: 3420,
-        height: 2148,
-        alt: "trackmyprop desktop portfolio overview",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "trackmyprop — product design and engineering case study",
     description: PAGE_DESCRIPTION,
-    images: ["/work/trackmyprop/overview.png"],
   },
 };
 
