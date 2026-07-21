@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
-import { siGithub, siYoutube } from "simple-icons";
+import { siGithub, siX, siYoutube } from "simple-icons";
 import { BrandIcon } from "@/components/brand-icon";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { SendMessageButton } from "@/components/send-message-button";
@@ -65,8 +65,9 @@ export default async function Home() {
               href="https://x.com/chrisgoingturbo"
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-1 inline-flex text-[14px] text-muted underline decoration-transparent underline-offset-[3px] hover:text-foreground hover:decoration-border"
+              className="mt-1 inline-flex items-center gap-1.5 text-[14px] text-muted underline decoration-transparent underline-offset-[3px] hover:text-foreground hover:decoration-border"
             >
+              <BrandIcon icon={siX} size={11} className="shrink-0" />
               chrisgoingturbo
             </a>
           </div>
@@ -83,7 +84,17 @@ export default async function Home() {
             the businesses supporting them.
           </p>
           <p>
-            I&rsquo;m currently building <strong className="font-medium text-foreground">trackmyprop</strong>{" "}
+            I&rsquo;m currently building{" "}
+            <strong className="inline-flex items-center gap-1 align-[-0.075em] font-medium text-foreground">
+              <Image
+                src="/trackmyprop-logo.svg"
+                alt=""
+                width={15}
+                height={15}
+                className="size-[15px] shrink-0 object-contain"
+              />
+              trackmyprop
+            </strong>{" "}
             &mdash; a desktop trading workspace for managing prop-firm accounts, rules,
             trades, journals, and payouts.
           </p>
