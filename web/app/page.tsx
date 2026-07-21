@@ -30,14 +30,14 @@ export default async function Home() {
             <span className="font-normal text-muted">(a.k.a chrisgoingturbo)</span>
           </h1>
           <p className="mt-1 text-[15px] font-medium text-muted">
-            head of community at thePropTrade
+            community manager · actively seeking opportunities
           </p>
         </div>
       </header>
 
       <section className="mt-10 space-y-5 text-[15px] leading-[1.75] text-foreground/80">
         <p>
-          i&rsquo;m head of community at{" "}
+          until july 2026, i was head of community at{" "}
           <ProseLink href="https://theproptrade.com">
             <Image
               src="/theproptrade-logo.svg"
@@ -48,9 +48,11 @@ export default async function Home() {
             />
             thePropTrade
           </ProseLink>
-          , a prop firm built on real market experience and transparent rules.
-          day to day i scale the community, drive organic engagement, and shape
-          an intimate space traders <em>actually feel</em> at home in.
+          , a prop firm built on real market experience and transparent rules,
+          where i scaled the community, drove organic engagement, and shaped an
+          intimate space traders <em>actually feel</em> at home in. i&rsquo;m now
+          actively seeking new opportunities in community, growth, and web
+          development.
         </p>
         <p>
           previously, i scaled the discord community at{" "}

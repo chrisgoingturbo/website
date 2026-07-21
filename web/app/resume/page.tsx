@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "resume",
   description:
-    "community manager, futures trader, web developer. building trackmyprop.",
+    "community manager, futures trader, and web developer actively seeking new opportunities.",
 };
 
 type Role = {
@@ -27,9 +27,9 @@ const experience: Role[] = [
     url: "https://theproptrade.com",
     title: "head of community",
     start: "Nov 2025",
-    end: "present",
+    end: "Jul 2026",
     blurb:
-      "scaling the community, driving organic engagement, and shaping a space traders actually feel at home in.",
+      "scaled the community, drove organic engagement, and shaped a space traders actually feel at home in.",
   },
   {
     company: "PipFarm",
@@ -94,7 +94,8 @@ export default function ResumePage() {
             christian obanaka
           </h1>
           <p className="mt-2 text-[15px] leading-[1.65] text-muted">
-            community manager, futures trader, web developer.
+            community manager, futures trader, web developer. actively seeking
+            new opportunities.
           </p>
         </header>
 
