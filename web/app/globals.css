@@ -153,10 +153,14 @@
 }
 .card-shadow {
   box-shadow: var(--shadow-custom);
-  transition: box-shadow 220ms cubic-bezier(0, 0, 0.2, 1);
 }
 .card-shadow:hover {
   box-shadow: var(--shadow-custom-hover);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card-shadow {
+    transition: box-shadow 180ms ease-out;
+  }
 }
 
 /* ----- prose: long-form body for blog posts -------------------------- */

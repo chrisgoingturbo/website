@@ -30,9 +30,10 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 const SITE_URL = "https://godsbattle.net";
-const SITE_TITLE = "Christian Obanaka";
+const SITE_NAME = "Christian Obanaka";
+const SITE_TITLE = "Christian Obanaka — Design Engineer";
 const SITE_DESCRIPTION =
-  "community manager, futures trader, web developer. building trackmyprop.";
+  "Christian Obanaka is a design engineer and futures trader creating polished product experiences for trading and fintech companies.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,10 +46,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: SITE_URL,
-    siteName: SITE_TITLE,
+    siteName: SITE_NAME,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     locale: "en_US",
+    firstName: "Christian",
+    lastName: "Obanaka",
+    username: "chrisgoingturbo",
     images: [
       {
         url: "/avatar.webp",
@@ -65,6 +69,17 @@ export const metadata: Metadata = {
     creator: "@chrisgoingturbo",
     images: ["/avatar.webp"],
   },
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  keywords: [
+    "design engineer",
+    "product design engineer",
+    "frontend engineer",
+    "trading product design",
+    "fintech product design",
+    "futures trading",
+    "prop firms",
+  ],
 };
 
 export const viewport: Viewport = {

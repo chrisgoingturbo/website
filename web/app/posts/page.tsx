@@ -6,9 +6,9 @@ import { SiteHeader } from "@/components/site-header";
 import { getAllPostMeta, type PostMeta } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "writing",
+  title: "writing archive",
   description:
-    "essays, how-to's, and notes. companions to the godsbattle channel.",
+    "Earlier PC-optimization tutorials and technical notes from the godsbattle archive.",
 };
 
 function formatShortDate(iso: string): string {
@@ -33,11 +33,11 @@ export default async function PostsIndex() {
       <main id="main" className="mx-auto max-w-[1080px] px-6 pt-16 pb-32 sm:pt-20">
         <header className="mb-16 max-w-[680px]">
           <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
-            writing
+            writing archive
           </h1>
           <p className="mt-2 text-[14px] leading-[1.65] text-muted">
-            {posts.length} entries. companion notes to the godsbattle channel,
-            plus the occasional rabbit hole.
+            {posts.length} earlier technical notes and companions to the
+            godsbattle channel.
           </p>
         </header>
 

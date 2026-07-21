@@ -11,7 +11,7 @@ export function SiteHeader({ wide }: { wide?: boolean }) {
     >
       <Link
         href="/"
-        className="group inline-flex items-center gap-2.5 text-muted hover:text-foreground"
+        className="group -my-2 inline-flex min-h-11 items-center gap-2.5 py-2 text-muted hover:text-foreground"
       >
         <span
           aria-hidden

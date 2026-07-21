@@ -1,6 +1,6 @@
 # godsbattle.net
 
-my personal corner of the internet — portfolio, writing, and the occasional rabbit hole.
+design engineering portfolio, trackmyprop case study, and an archive of earlier technical writing.
 
 **stack:** next.js 16 · react 19 · tailwind v4 · self-hosted inter · deployed to vercel
 
@@ -8,7 +8,7 @@ my personal corner of the internet — portfolio, writing, and the occasional ra
 
 ```
 web/
-├── app/            # routes: home, /posts, /resume, /free
+├── app/            # routes: home, /work/trackmyprop, /resume, /posts, /free
 ├── components/     # hand-rolled — no component library
 ├── content/posts/  # blog posts as markdown, one folder per slug
 └── lib/            # markdown pipeline (remark/rehype + hugo shortcode compat)

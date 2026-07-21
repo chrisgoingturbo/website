@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, LazyMotion, domAnimation, m } from "motion/react";
 import { Check, Copy } from "lucide-react";
 
 const EMAIL = "christian@godsbattle.net";
@@ -48,27 +47,14 @@ export function CopyEmailButton() {
       onClick={handleCopy}
       aria-label={copied ? "email address copied" : "copy email address"}
       aria-live="polite"
-      className="inline-flex min-w-[134px] items-center justify-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[15px] font-medium text-foreground hover:bg-foreground/[0.04]"
+      className="inline-flex min-h-11 min-w-[134px] items-center justify-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[15px] font-medium text-foreground hover:bg-foreground/[0.04]"
     >
-      <span aria-hidden className="relative h-[14px] w-[14px]">
-        <LazyMotion features={domAnimation} strict>
-          <AnimatePresence initial={false}>
-            <m.span
-              key={copied ? "tick" : "copy"}
-              className="absolute inset-0 grid place-items-center"
-              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
-              transition={{ type: "spring", duration: 0.3, bounce: 0 }}
-            >
-              {copied ? (
-                <Check className="h-[14px] w-[14px]" strokeWidth={2} />
-              ) : (
-                <Copy className="h-[14px] w-[14px]" strokeWidth={2} />
-              )}
-            </m.span>
-          </AnimatePresence>
-        </LazyMotion>
+      <span aria-hidden className="grid size-[14px] place-items-center">
+        {copied ? (
+          <Check className="size-[14px]" strokeWidth={2} />
+        ) : (
+          <Copy className="size-[14px]" strokeWidth={2} />
+        )}
       </span>
       <span>{copied ? "copied" : "copy email"}</span>
     </button>

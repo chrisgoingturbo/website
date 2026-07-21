@@ -1,13 +1,28 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 
+const RESUME_DESCRIPTION =
+  "Design engineer, futures trader, and former prop-firm community lead focused on trading and fintech products.";
+
 export const metadata: Metadata = {
   title: "resume",
-  description:
-    "community manager, futures trader, and web developer actively seeking new opportunities.",
+  description: RESUME_DESCRIPTION,
+  alternates: { canonical: "/resume/" },
+  openGraph: {
+    type: "profile",
+    url: "https://godsbattle.net/resume/",
+    title: "Christian Obanaka — design engineer résumé",
+    description: RESUME_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: "Christian Obanaka — design engineer résumé",
+    description: RESUME_DESCRIPTION,
+  },
 };
 
 type Role = {
@@ -53,19 +68,21 @@ const experience: Role[] = [
   },
 ];
 
-const skills = [
-  "community strategy, growth, and moderation across discord, telegram, and x",
-  "affiliate program management and partnership development",
-  "CRM workflows on intercom and zendesk",
-  "data-driven growth using engagement metrics and analytics",
-  "sales pitching, copywriting, and content planning",
+const capabilities = [
+  "product and interface design for desktop and responsive web experiences",
+  "frontend implementation with react, typescript, next.js, and tailwind css",
+  "interaction design, product prototyping, and iterative interface refinement",
+  "design systems, reusable components, and consistent data-dense UI patterns",
+  "accessible names, keyboard navigation, focus behavior, and reduced-motion support",
+  "trading, prop-firm, trader-support, community, and operations domain knowledge",
+  "AI-assisted research, implementation, testing, and review with human ownership of decisions",
 ];
 
 const tools = [
-  ["community", ["discord", "telegram", "x", "whatsapp", "circle"]],
-  ["affiliate", ["gleam", "zealy"]],
-  ["support", ["intercom", "zendesk"]],
-  ["operations", ["notion", "figma", "clickup", "slack"]],
+  ["design", ["figma", "design systems", "prototyping"]],
+  ["frontend", ["react", "typescript", "next.js", "tailwind css"]],
+  ["product", ["electron", "git", "accessibility testing"]],
+  ["operations", ["notion", "clickup", "intercom", "zendesk", "slack"]],
 ] as const;
 
 const achievements = [
@@ -79,11 +96,6 @@ const achievements = [
   },
 ];
 
-const projects = [
-  { label: "trackmyprop", href: "https://trackmyprop.app" },
-  { label: "godsbattle", href: "https://youtube.com/godsbattle" },
-];
-
 export default function ResumePage() {
   return (
     <>
@@ -93,13 +105,20 @@ export default function ResumePage() {
           <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
             christian obanaka
           </h1>
-          <p className="mt-2 text-[15px] leading-[1.65] text-muted">
-            community manager, futures trader, web developer. actively seeking
-            new opportunities.
+          <p className="mt-3 max-w-[620px] text-pretty text-[15px] leading-[1.7] text-muted">
+            Design engineer, futures trader, and former prop-firm community
+            lead. I combine product design, frontend implementation, and
+            firsthand trader knowledge to build focused financial-product
+            experiences.
           </p>
         </header>
 
         <Section title="experience">
+          <p className="mb-6 text-pretty text-[14px] leading-[1.7] text-foreground/80">
+            Before moving into design engineering, I worked directly with
+            traders through community, support, affiliate, and growth roles at
+            prop firms. That experience now informs the products I design.
+          </p>
           <ol className="space-y-2">
             {experience.map((role) => (
               <li
@@ -143,12 +162,12 @@ export default function ResumePage() {
           </ol>
         </Section>
 
-        <Section title="skills">
+        <Section title="design engineering capabilities">
           <ul className="space-y-2 text-[14px] leading-[1.65] text-foreground/85">
-            {skills.map((skill) => (
-              <li key={skill} className="flex gap-3">
+            {capabilities.map((capability) => (
+              <li key={capability} className="flex gap-3">
                 <span aria-hidden className="mt-[10px] block h-px w-3 shrink-0 bg-border" />
-                <span>{skill}</span>
+                <span>{capability}</span>
               </li>
             ))}
           </ul>
@@ -172,11 +191,20 @@ export default function ResumePage() {
 
         <Section title="projects">
           <ul className="space-y-2">
-            {projects.map((p) => (
-              <li key={p.href}>
-                <ExtLink href={p.href}>{p.label}</ExtLink>
-              </li>
-            ))}
+            <li>
+              <Link
+                href="/work/trackmyprop/"
+                className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
+              >
+                trackmyprop — product design and engineering case study
+              </Link>
+            </li>
+            <li>
+              <ExtLink href="https://trackmyprop.app">trackmyprop product website</ExtLink>
+            </li>
+            <li>
+              <ExtLink href="https://youtube.com/godsbattle">godsbattle</ExtLink>
+            </li>
           </ul>
         </Section>
 
