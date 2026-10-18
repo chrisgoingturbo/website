@@ -124,7 +124,7 @@ export default function TrackmypropCaseStudy() {
           <ProjectFact term="Current state">Private beta, in active development</ProjectFact>
         </dl>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="The product">
             <p>
               trackmyprop is a desktop workspace for traders who operate across
@@ -212,7 +212,7 @@ export default function TrackmypropCaseStudy() {
           </figcaption>
         </figure>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="Important interface decisions">
             <ul className="space-y-4">
               <DecisionItem title="Desktop density with a stable hierarchy">
@@ -271,7 +271,7 @@ export default function TrackmypropCaseStudy() {
           </figure>
         </div>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="Desktop-first by design">
             <p>
               trackmyprop is built as an Electron desktop application for macOS

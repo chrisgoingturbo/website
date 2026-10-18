@@ -89,20 +89,20 @@ const education = [
   {
     school: "University of Port Harcourt",
     location: "Port Harcourt, Nigeria",
-    dates: "2021 - Oct 2025",
+    dates: "2021 – Oct 2025",
     qualification: "Bachelor’s degree in Mathematics & Computer Science",
   },
   {
     school: "Federal Government College",
     location: "Port Harcourt, Nigeria",
-    dates: "2017 - 2020",
-    qualification: "Senior Secondary 1-3",
+    dates: "2017 – 2020",
+    qualification: "Senior Secondary 1–3",
   },
   {
     school: "Wisdom Gate Intl. College",
     location: "Port Harcourt, Nigeria",
-    dates: "2015 - 2017",
-    qualification: "Junior Secondary 1-3",
+    dates: "2015 – 2017",
+    qualification: "Junior Secondary 1–3",
   },
 ] as const;
 
