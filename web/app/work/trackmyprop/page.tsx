@@ -72,7 +72,7 @@ export default function TrackmypropCaseStudy() {
               className="size-10 shrink-0 object-contain sm:size-[52px]"
               priority
             />
-            <h1 className="text-balance text-[38px] font-medium leading-[1.08] text-foreground sm:text-[52px]">
+            <h1 className="text-balance text-[38px] font-medium leading-[1.08] tracking-[-0.02em] text-foreground sm:text-[52px]">
               trackmyprop
             </h1>
           </div>
@@ -346,7 +346,7 @@ export default function TrackmypropCaseStudy() {
           </CaseSection>
 
           <section aria-labelledby="next-step-heading" className="mt-20 rounded-2xl bg-card p-6 ring-1 ring-border sm:p-8">
-            <h2 id="next-step-heading" className="text-balance text-[22px] font-medium text-foreground">
+            <h2 id="next-step-heading" className="text-balance text-[22px] font-medium tracking-[-0.01em] text-foreground">
               See the product or discuss a project
             </h2>
             <p className="mt-3 text-pretty text-[15px] leading-[1.7] text-muted">
@@ -408,7 +408,7 @@ function CaseSection({ title, children }: { title: string; children: ReactNode }
   const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   return (
     <section aria-labelledby={id} className="mt-16 first:mt-0">
-      <h2 id={id} className="text-balance text-[24px] font-medium leading-[1.2] text-foreground sm:text-[28px]">
+      <h2 id={id} className="text-balance text-[24px] font-medium leading-[1.2] tracking-[-0.015em] text-foreground sm:text-[28px]">
         {title}
       </h2>
       <div className="mt-5 space-y-4 text-pretty text-[16px] leading-[1.65] text-foreground/80">

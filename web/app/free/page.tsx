@@ -65,7 +65,7 @@ export default function FreePage() {
       <main id="main" className="mx-auto max-w-[1080px] px-6 pt-16 pb-32 sm:pt-20">
         <header className="max-w-[680px]">
           <p className="text-[13px] text-muted">free</p>
-          <h1 className="mt-3 text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
+          <h1 className="mt-3 text-[28px] font-medium leading-[1.15] tracking-tight text-foreground sm:text-[32px]">
             small things, given away.
           </h1>
           <p className="mt-3 text-[15px] leading-[1.65] text-muted">
@@ -124,7 +124,7 @@ function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <p className="text-[12px] text-muted tabular-nums">{product.format}</p>
-        <h2 className="text-[17px] font-medium tracking-tight text-foreground">
+        <h2 className="text-[17px] font-medium text-foreground">
           {product.title}
         </h2>
         <p className="text-[14px] leading-[1.55] text-muted">{product.blurb}</p>

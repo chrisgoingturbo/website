@@ -143,7 +143,7 @@ export default function ResumePage() {
       <SiteHeader />
       <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
         <header>
-          <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
+          <h1 className="text-[28px] font-medium leading-[1.15] tracking-tight text-foreground sm:text-[32px]">
             christian obanaka
           </h1>
           <p className="mt-3 max-w-[620px] text-pretty text-[15px] leading-[1.7] text-muted">
