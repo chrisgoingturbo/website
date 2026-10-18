@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  Copy01Icon,
+  Tick02Icon,
+} from "@hugeicons/core-free-icons";
 
 const EMAIL = "christian@godsbattle.net";
 
@@ -51,9 +55,9 @@ export function CopyEmailButton() {
     >
       <span aria-hidden className="grid size-[14px] place-items-center">
         {copied ? (
-          <Check className="size-[14px]" strokeWidth={2} />
+          <HugeiconsIcon icon={Tick02Icon} className="size-[14px]" strokeWidth={2} />
         ) : (
-          <Copy className="size-[14px]" strokeWidth={2} />
+          <HugeiconsIcon icon={Copy01Icon} className="size-[14px]" strokeWidth={2} />
         )}
       </span>
       <span>{copied ? "copied" : "copy email"}</span>

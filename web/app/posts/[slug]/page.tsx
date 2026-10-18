@@ -3,11 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { YouTubeLite } from "@/components/youtube-lite";
 import { getAllPostSlugs, getPost, getPostNav } from "@/lib/posts";
 import "lite-youtube-embed/src/lite-yt-embed.css";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft02Icon,
+  ArrowRight02Icon,
+} from "@hugeicons/core-free-icons";
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
@@ -99,7 +103,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                   className="group block rounded-lg p-3 -mx-3 hover:bg-muted/10"
                 >
                   <p className="flex items-center gap-1.5 text-[12px] text-muted">
-                    <ArrowLeft
+                    <HugeiconsIcon icon={ArrowLeft02Icon}
                       aria-hidden
                       className="h-3 w-3 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
                       strokeWidth={2}
@@ -120,7 +124,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                 >
                   <p className="flex items-center justify-end gap-1.5 text-[12px] text-muted">
                     older
-                    <ArrowRight
+                    <HugeiconsIcon icon={ArrowRight02Icon}
                       aria-hidden
                       className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5"
                       strokeWidth={2}
@@ -137,7 +141,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
                 href="/posts/"
                 className="group inline-flex items-center gap-1.5 text-[14px] text-muted hover:text-foreground"
               >
-                <ArrowLeft
+                <HugeiconsIcon icon={ArrowLeft02Icon}
                   aria-hidden
                   className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
                   strokeWidth={2}
@@ -152,7 +156,7 @@ export default async function PostPage(props: PageProps<"/posts/[slug]">) {
               href="/posts/"
               className="group inline-flex items-center gap-1.5 text-[14px] text-foreground/80 hover:text-foreground"
             >
-              <ArrowLeft
+              <HugeiconsIcon icon={ArrowLeft02Icon}
                 aria-hidden
                 className="h-3.5 w-3.5 text-muted/70 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"
                 strokeWidth={2}

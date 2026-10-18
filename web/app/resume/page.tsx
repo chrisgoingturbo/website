@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Download } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowUpRight01Icon,
+  Download04Icon,
+} from "@hugeicons/core-free-icons";
 
 const RESUME_DESCRIPTION =
   "Software engineer, design engineer, and futures trader focused on trading and fintech products.";
@@ -157,7 +161,7 @@ export default function ResumePage() {
               download
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
             >
-              <Download aria-hidden className="size-3.5" strokeWidth={2} />
+              <HugeiconsIcon icon={Download04Icon} aria-hidden className="size-3.5" strokeWidth={2} />
               Download PDF
             </a>
             <a
@@ -349,7 +353,7 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
     >
       {children}
       {!isMail ? (
-        <ArrowUpRight
+        <HugeiconsIcon icon={ArrowUpRight01Icon}
           aria-hidden
           className="h-3 w-3 self-center text-muted transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
           strokeWidth={2}

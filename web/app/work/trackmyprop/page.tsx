@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft02Icon,
+  ArrowUpRight01Icon,
+} from "@hugeicons/core-free-icons";
 
 const PAGE_URL = "https://godsbattle.net/work/trackmyprop/";
 const PAGE_DESCRIPTION =
@@ -88,7 +92,7 @@ export default function TrackmypropCaseStudy() {
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
             >
               Visit product website
-              <ArrowUpRight aria-hidden className="size-3.5" strokeWidth={2} />
+              <HugeiconsIcon icon={ArrowUpRight01Icon} aria-hidden className="size-3.5" strokeWidth={2} />
             </a>
             <a
               href="mailto:christian@godsbattle.net"
@@ -361,7 +365,7 @@ export default function TrackmypropCaseStudy() {
                 className="group inline-flex items-center gap-1.5 text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
               >
                 trackmyprop.app
-                <ArrowUpRight aria-hidden className="size-3.5 text-muted group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <HugeiconsIcon icon={ArrowUpRight01Icon} aria-hidden className="size-3.5 text-muted group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
                 href="mailto:christian@godsbattle.net"
@@ -384,7 +388,7 @@ export default function TrackmypropCaseStudy() {
             href="/"
             className="group mt-16 inline-flex items-center gap-1.5 text-[14px] text-muted hover:text-foreground"
           >
-            <ArrowLeft aria-hidden className="size-3.5 group-hover:-translate-x-0.5" strokeWidth={2} />
+            <HugeiconsIcon icon={ArrowLeft02Icon} aria-hidden className="size-3.5 group-hover:-translate-x-0.5" strokeWidth={2} />
             Back to portfolio
           </Link>
         </div>

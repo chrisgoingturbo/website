@@ -1,11 +1,4 @@
 import type { ComponentType, SVGProps } from "react";
-import type { LucideIcon } from "lucide-react";
-import {
-  BookOpen,
-  ChartNoAxesCombined,
-  Info,
-  Mail,
-} from "lucide-react";
 import type { SimpleIcon } from "simple-icons";
 import {
   siBaseui,
@@ -52,12 +45,19 @@ import {
   siVitest,
 } from "simple-icons";
 import { BrandIcon, CodexIcon, MotionIcon } from "@/components/brand-icon";
+import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
+import {
+  BookOpen01Icon,
+  ChartLineData01Icon,
+  InformationCircleIcon,
+  Mail01Icon,
+} from "@hugeicons/core-free-icons";
 
 type StackTool = {
   name: string;
   href: string;
   icon?: SimpleIcon;
-  glyph?: LucideIcon;
+  glyph?: IconSvgElement;
   brandGlyph?: ComponentType<SVGProps<SVGSVGElement>>;
   brandGlyphClassName?: string;
 };
@@ -151,15 +151,15 @@ const stackGroups: StackGroup[] = [
       {
         name: "Recharts",
         href: "https://recharts.org/",
-        glyph: ChartNoAxesCombined,
+        glyph: ChartLineData01Icon,
       },
       { name: "D3", href: "https://d3js.org/", icon: siD3 },
       { name: "Visx", href: "https://airbnb.io/visx/", icon: siVisx },
-      { name: "Fumadocs", href: "https://fumadocs.dev/", glyph: BookOpen },
+      { name: "Fumadocs", href: "https://fumadocs.dev/", glyph: BookOpen01Icon },
       {
         name: "React Email",
         href: "https://react.email/",
-        glyph: Mail,
+        glyph: Mail01Icon,
       },
       {
         name: "Markdown",
@@ -224,7 +224,7 @@ export function StackSection() {
           aria-label="About this stack list"
           className="stack-note-trigger relative inline-flex size-7 items-center justify-center rounded-full border border-border bg-card text-muted outline-none hover:border-foreground/20 hover:text-foreground focus-visible:text-foreground"
         >
-          <Info aria-hidden className="size-3.5" strokeWidth={1.8} />
+          <HugeiconsIcon icon={InformationCircleIcon} aria-hidden className="size-3.5" strokeWidth={1.8} />
           <span
             id="stack-private-note"
             role="tooltip"
@@ -262,7 +262,6 @@ export function StackSection() {
               className="flex flex-wrap gap-1.5 sm:pl-4"
             >
               {group.tools.map((tool) => {
-                const Glyph = tool.glyph;
                 const BrandGlyph = tool.brandGlyph;
 
                 return (
@@ -281,8 +280,9 @@ export function StackSection() {
                         />
                       ) : BrandGlyph ? (
                         <BrandGlyph className={tool.brandGlyphClassName} />
-                      ) : Glyph ? (
-                        <Glyph
+                      ) : tool.glyph ? (
+                        <HugeiconsIcon
+                          icon={tool.glyph}
                           aria-hidden
                           className="size-[13px] shrink-0 text-muted"
                           strokeWidth={1.8}

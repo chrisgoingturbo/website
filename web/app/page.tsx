@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Suspense } from "react";
-import { ChevronRight, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { siYoutube } from "simple-icons";
@@ -16,6 +15,11 @@ import {
 } from "@/components/portfolio-accordion";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import { Signature } from "@/components/signature";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowRight01Icon,
+  Mortarboard02Icon,
+} from "@hugeicons/core-free-icons";
 
 const SITE_URL = "https://godsbattle.net";
 
@@ -230,7 +234,7 @@ export default function Home() {
                   <h3 className="text-[15px] font-medium text-foreground">
                     trackmyprop
                   </h3>
-                  <ChevronRight
+                  <HugeiconsIcon icon={ArrowRight01Icon}
                     aria-hidden
                     className="size-4 -translate-x-0.5 text-muted opacity-0 transition-[opacity,transform] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
                     strokeWidth={1.8}
@@ -274,7 +278,7 @@ export default function Home() {
                   <h3 className="text-[15px] font-medium text-foreground">
                     godsbattle
                   </h3>
-                  <ChevronRight
+                  <HugeiconsIcon icon={ArrowRight01Icon}
                     aria-hidden
                     className="size-4 -translate-x-0.5 text-muted opacity-0 transition-[opacity,transform] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
                     strokeWidth={1.8}
@@ -368,7 +372,7 @@ export default function Home() {
               <li key={`${item.school}-${item.period}`}>
                 <div className="grid grid-cols-[40px_minmax(0,1fr)] gap-3">
                   <span className="flex size-10 items-center justify-center rounded-lg border border-border bg-foreground/[0.035] text-muted">
-                    <GraduationCap
+                    <HugeiconsIcon icon={Mortarboard02Icon}
                       aria-hidden
                       className="size-[18px]"
                       strokeWidth={1.7}

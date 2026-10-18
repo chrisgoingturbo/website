@@ -7,7 +7,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { ChevronDown } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowDown01Icon } from "@hugeicons/core-free-icons";
 
 type AccordionContextValue = {
   openSection: string | null;
@@ -71,7 +72,7 @@ export function PortfolioAccordionItem({
           <span className="text-[16px] font-medium text-foreground">
             {title}
           </span>
-          <ChevronDown
+          <HugeiconsIcon icon={ArrowDown01Icon}
             aria-hidden
             className="portfolio-accordion-chevron size-4 shrink-0 text-muted"
             strokeWidth={1.7}
