@@ -221,9 +221,7 @@ export default function Home() {
                   height={64}
                   className="project-card-logo size-16 object-contain"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
-                  2026 – Present
-                </span>
+                <ProjectPeriod start="2025" end="Present" />
               </div>
               <div className="project-card-panel absolute inset-x-0 bottom-0 isolate px-4 py-3.5">
                 <span
@@ -265,9 +263,7 @@ export default function Home() {
                   size={60}
                   className="project-card-logo text-foreground"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
-                  2019 – 2023
-                </span>
+                <ProjectPeriod start="2019" end="2023" />
               </div>
               <div className="project-card-panel absolute inset-x-0 bottom-0 isolate px-4 py-3.5">
                 <span
@@ -479,6 +475,29 @@ function Section({
       </div>
       {children}
     </section>
+  );
+}
+
+/* Shows only the end of a project's run; hovering or focusing the card
+   reveals the start year, joined by a hairline rather than a dash. */
+function ProjectPeriod({ start, end }: { start: string; end: string }) {
+  return (
+    <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
+      <span className="sr-only">
+        {start} to {end}
+      </span>
+      <span aria-hidden className="project-period inline-flex items-center">
+        <span className="project-period-start">
+          <span>
+            <span className="inline-flex items-center gap-1.5 pr-1.5">
+              {start}
+              <span className="h-px w-2.5 bg-current opacity-50" />
+            </span>
+          </span>
+        </span>
+        {end}
+      </span>
+    </span>
   );
 }
 

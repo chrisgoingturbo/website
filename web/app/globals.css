@@ -241,6 +241,36 @@
   filter: blur(0);
 }
 
+.project-period-start {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  overflow: hidden;
+  opacity: 0;
+  filter: blur(2px);
+  transition:
+    grid-template-columns 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 180ms ease-out,
+    filter 200ms ease-out;
+}
+.project-period-start > span {
+  min-width: 0;
+  overflow: hidden;
+}
+.project-card:hover .project-period-start,
+.project-card:focus-visible .project-period-start {
+  grid-template-columns: 1fr;
+  opacity: 1;
+  filter: blur(0);
+}
+/* No hover on touch screens, so show the full range there. */
+@media (hover: none) {
+  .project-period-start {
+    grid-template-columns: 1fr;
+    opacity: 1;
+    filter: none;
+  }
+}
+
 .portfolio-accordion-section {
   transition: background-color 150ms ease-out;
 }
@@ -409,6 +439,7 @@
   .project-card-logo,
   .project-card-blur,
   .project-card-description,
+  .project-period-start,
   .portfolio-accordion-section,
   .portfolio-accordion-trigger,
   .portfolio-accordion-content,
