@@ -411,7 +411,7 @@ function CaseSection({ title, children }: { title: string; children: ReactNode }
       <h2 id={id} className="text-balance text-[24px] font-medium leading-[1.2] text-foreground sm:text-[28px]">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-pretty text-[15px] leading-[1.75] text-foreground/80 sm:text-[16px]">
+      <div className="mt-5 space-y-4 text-pretty text-[16px] leading-[1.65] text-foreground/80">
         {children}
       </div>
     </section>

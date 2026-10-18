@@ -51,6 +51,7 @@
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "cv01";
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
@@ -436,8 +437,8 @@
    this block resolve by source order, not selector weight. */
 @layer components {
   .prose {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .prose > * + * { margin-top: 1.25rem; }
