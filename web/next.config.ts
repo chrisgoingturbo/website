@@ -19,9 +19,6 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "*": ["./content/**/*"],
   },
-  experimental: {
-    viewTransition: true,
-  },
   async redirects() {
     return [
       { source: "/trackmyprop", destination: "https://trackmyprop.app", permanent: true },
