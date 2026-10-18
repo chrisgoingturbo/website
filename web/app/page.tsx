@@ -479,21 +479,17 @@ function Section({
 }
 
 /* Shows only the end of a project's run; hovering or focusing the card
-   reveals the start year, joined by a hairline rather than a dash. */
+   draws a hairline out of the end label and reveals the start year. */
 function ProjectPeriod({ start, end }: { start: string; end: string }) {
   return (
     <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
       <span className="sr-only">
         {start} to {end}
       </span>
-      <span aria-hidden className="project-period inline-flex items-center">
+      <span aria-hidden className="project-period relative inline-flex items-center">
         <span className="project-period-start">
-          <span>
-            <span className="inline-flex items-center gap-1.5 pr-1.5">
-              {start}
-              <span className="h-px w-2.5 bg-current opacity-50" />
-            </span>
-          </span>
+          <span className="project-period-year">{start}</span>
+          <span className="project-period-line" />
         </span>
         {end}
       </span>
