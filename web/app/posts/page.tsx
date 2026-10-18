@@ -32,7 +32,7 @@ export default async function PostsIndex() {
       <SiteHeader wide />
       <main id="main" className="mx-auto max-w-[1080px] px-6 pt-16 pb-32 sm:pt-20">
         <header className="mb-16 max-w-[680px]">
-          <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
+          <h1 className="text-[28px] font-medium leading-[1.15] tracking-tight text-foreground sm:text-[32px]">
             writing archive
           </h1>
           <p className="mt-2 text-[14px] leading-[1.65] text-muted">
@@ -105,7 +105,7 @@ function PostThumb({ post, eager }: { post: PostMeta; eager: boolean }) {
         </div>
       </ViewTransition>
       <div className="mt-4 px-0.5">
-        <p className="text-[14.5px] font-medium leading-snug tracking-tight text-foreground transition-colors duration-200 group-hover:text-foreground/65">
+        <p className="text-[15px] font-medium leading-snug text-foreground transition-colors duration-200 group-hover:text-foreground/65">
           {post.displayTitle}
         </p>
         {post.date ? (

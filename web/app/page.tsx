@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Suspense } from "react";
-import { ChevronRight, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { siYoutube } from "simple-icons";
@@ -16,6 +15,11 @@ import {
 } from "@/components/portfolio-accordion";
 import { ResumeDownloadButton } from "@/components/resume-download-button";
 import { Signature } from "@/components/signature";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowRight01Icon,
+  Mortarboard02Icon,
+} from "@hugeicons/core-free-icons";
 
 const SITE_URL = "https://godsbattle.net";
 
@@ -129,10 +133,10 @@ export default function Home() {
       <header>
         <div className="flex min-w-0 items-center justify-between gap-4">
           <div className="min-w-0">
-            <h1 className="truncate text-[17px] font-medium leading-[1.25] tracking-[-0.012em] text-foreground">
+            <h1 className="text-[17px] font-medium leading-[1.25] text-foreground">
               Christian Obanaka
             </h1>
-            <div className="mt-1 text-[14px] font-medium tracking-[-0.01em] text-muted">
+            <div className="mt-1 text-[15px] font-medium text-muted">
               Design engineer
             </div>
           </div>
@@ -217,7 +221,7 @@ export default function Home() {
                   height={64}
                   className="project-card-logo size-16 object-contain"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[11px] text-muted tabular-nums">
+                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
                   2026 – Present
                 </span>
               </div>
@@ -230,7 +234,7 @@ export default function Home() {
                   <h3 className="text-[15px] font-medium text-foreground">
                     trackmyprop
                   </h3>
-                  <ChevronRight
+                  <HugeiconsIcon icon={ArrowRight01Icon}
                     aria-hidden
                     className="size-4 -translate-x-0.5 text-muted opacity-0 transition-[opacity,transform] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
                     strokeWidth={1.8}
@@ -261,7 +265,7 @@ export default function Home() {
                   size={60}
                   className="project-card-logo text-foreground"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[11px] text-muted tabular-nums">
+                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
                   2019 – 2023
                 </span>
               </div>
@@ -274,7 +278,7 @@ export default function Home() {
                   <h3 className="text-[15px] font-medium text-foreground">
                     godsbattle
                   </h3>
-                  <ChevronRight
+                  <HugeiconsIcon icon={ArrowRight01Icon}
                     aria-hidden
                     className="size-4 -translate-x-0.5 text-muted opacity-0 transition-[opacity,transform] duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
                     strokeWidth={1.8}
@@ -335,7 +339,7 @@ export default function Home() {
                           </span>
                         </a>
                       </h3>
-                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[11px] leading-4 text-muted">
+                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[12px] leading-4 text-muted">
                         {role.employment}
                       </span>
                       <span
@@ -354,7 +358,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 pl-[52px] text-pretty text-[12px] leading-[1.6] text-muted/80">
+                <p className="mt-3 pl-[52px] text-pretty text-[13px] leading-[1.6] text-muted">
                   {role.description}
                 </p>
               </li>
@@ -368,7 +372,7 @@ export default function Home() {
               <li key={`${item.school}-${item.period}`}>
                 <div className="grid grid-cols-[40px_minmax(0,1fr)] gap-3">
                   <span className="flex size-10 items-center justify-center rounded-lg border border-border bg-foreground/[0.035] text-muted">
-                    <GraduationCap
+                    <HugeiconsIcon icon={Mortarboard02Icon}
                       aria-hidden
                       className="size-[18px]"
                       strokeWidth={1.7}
@@ -379,7 +383,7 @@ export default function Home() {
                       <h3 className="text-pretty text-[15px] font-medium text-foreground">
                         {item.school}
                       </h3>
-                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[11px] leading-4 text-muted">
+                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[12px] leading-4 text-muted">
                         {item.level}
                       </span>
                       <span
@@ -399,7 +403,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 pl-[52px] text-pretty text-[12px] leading-[1.6] text-muted/80">
+                <p className="mt-3 pl-[52px] text-pretty text-[13px] leading-[1.6] text-muted">
                   {item.location}
                 </p>
               </li>
@@ -469,7 +473,7 @@ function Section({
   return (
     <section aria-labelledby={id} className="mt-20">
       <div className="mb-6">
-        <h2 id={id} className="text-[14px] font-medium text-foreground">
+        <h2 id={id} className="text-[16px] font-medium text-foreground">
           {title}
         </h2>
       </div>

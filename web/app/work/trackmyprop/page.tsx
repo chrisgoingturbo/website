@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft02Icon,
+  ArrowUpRight01Icon,
+} from "@hugeicons/core-free-icons";
 
 const PAGE_URL = "https://godsbattle.net/work/trackmyprop/";
 const PAGE_DESCRIPTION =
@@ -72,7 +76,7 @@ export default function TrackmypropCaseStudy() {
               className="size-10 shrink-0 object-contain sm:size-[52px]"
               priority
             />
-            <h1 className="text-balance text-[38px] font-medium leading-[1.08] text-foreground sm:text-[52px]">
+            <h1 className="text-balance text-[38px] font-medium leading-[1.08] tracking-[-0.02em] text-foreground sm:text-[52px]">
               trackmyprop
             </h1>
           </div>
@@ -88,7 +92,7 @@ export default function TrackmypropCaseStudy() {
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
             >
               Visit product website
-              <ArrowUpRight aria-hidden className="size-3.5" strokeWidth={2} />
+              <HugeiconsIcon icon={ArrowUpRight01Icon} aria-hidden className="size-3.5" strokeWidth={2} />
             </a>
             <a
               href="mailto:christian@godsbattle.net"
@@ -124,7 +128,7 @@ export default function TrackmypropCaseStudy() {
           <ProjectFact term="Current state">Private beta, in active development</ProjectFact>
         </dl>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="The product">
             <p>
               trackmyprop is a desktop workspace for traders who operate across
@@ -212,7 +216,7 @@ export default function TrackmypropCaseStudy() {
           </figcaption>
         </figure>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="Important interface decisions">
             <ul className="space-y-4">
               <DecisionItem title="Desktop density with a stable hierarchy">
@@ -271,7 +275,7 @@ export default function TrackmypropCaseStudy() {
           </figure>
         </div>
 
-        <div className="mx-auto mt-20 max-w-[760px]">
+        <div className="mx-auto mt-20 max-w-[640px]">
           <CaseSection title="Desktop-first by design">
             <p>
               trackmyprop is built as an Electron desktop application for macOS
@@ -346,7 +350,7 @@ export default function TrackmypropCaseStudy() {
           </CaseSection>
 
           <section aria-labelledby="next-step-heading" className="mt-20 rounded-2xl bg-card p-6 ring-1 ring-border sm:p-8">
-            <h2 id="next-step-heading" className="text-balance text-[22px] font-medium text-foreground">
+            <h2 id="next-step-heading" className="text-balance text-[22px] font-medium tracking-[-0.01em] text-foreground">
               See the product or discuss a project
             </h2>
             <p className="mt-3 text-pretty text-[15px] leading-[1.7] text-muted">
@@ -361,7 +365,7 @@ export default function TrackmypropCaseStudy() {
                 className="group inline-flex items-center gap-1.5 text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
               >
                 trackmyprop.app
-                <ArrowUpRight aria-hidden className="size-3.5 text-muted group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <HugeiconsIcon icon={ArrowUpRight01Icon} aria-hidden className="size-3.5 text-muted group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
                 href="mailto:christian@godsbattle.net"
@@ -384,7 +388,7 @@ export default function TrackmypropCaseStudy() {
             href="/"
             className="group mt-16 inline-flex items-center gap-1.5 text-[14px] text-muted hover:text-foreground"
           >
-            <ArrowLeft aria-hidden className="size-3.5 group-hover:-translate-x-0.5" strokeWidth={2} />
+            <HugeiconsIcon icon={ArrowLeft02Icon} aria-hidden className="size-3.5 group-hover:-translate-x-0.5" strokeWidth={2} />
             Back to portfolio
           </Link>
         </div>
@@ -408,10 +412,10 @@ function CaseSection({ title, children }: { title: string; children: ReactNode }
   const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   return (
     <section aria-labelledby={id} className="mt-16 first:mt-0">
-      <h2 id={id} className="text-balance text-[24px] font-medium leading-[1.2] text-foreground sm:text-[28px]">
+      <h2 id={id} className="text-balance text-[24px] font-medium leading-[1.2] tracking-[-0.015em] text-foreground sm:text-[28px]">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-pretty text-[15px] leading-[1.75] text-foreground/80 sm:text-[16px]">
+      <div className="mt-5 space-y-4 text-pretty text-[16px] leading-[1.65] text-foreground/80">
         {children}
       </div>
     </section>

@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Download } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowUpRight01Icon,
+  Download04Icon,
+} from "@hugeicons/core-free-icons";
 
 const RESUME_DESCRIPTION =
   "Software engineer, design engineer, and futures trader focused on trading and fintech products.";
@@ -89,20 +93,20 @@ const education = [
   {
     school: "University of Port Harcourt",
     location: "Port Harcourt, Nigeria",
-    dates: "2021 - Oct 2025",
+    dates: "2021 – Oct 2025",
     qualification: "Bachelor’s degree in Mathematics & Computer Science",
   },
   {
     school: "Federal Government College",
     location: "Port Harcourt, Nigeria",
-    dates: "2017 - 2020",
-    qualification: "Senior Secondary 1-3",
+    dates: "2017 – 2020",
+    qualification: "Senior Secondary 1–3",
   },
   {
     school: "Wisdom Gate Intl. College",
     location: "Port Harcourt, Nigeria",
-    dates: "2015 - 2017",
-    qualification: "Junior Secondary 1-3",
+    dates: "2015 – 2017",
+    qualification: "Junior Secondary 1–3",
   },
 ] as const;
 
@@ -143,7 +147,7 @@ export default function ResumePage() {
       <SiteHeader />
       <main id="main" className="mx-auto max-w-[680px] px-6 pt-16 pb-32 sm:pt-20">
         <header>
-          <h1 className="text-[28px] font-medium tracking-tight text-foreground sm:text-[32px]">
+          <h1 className="text-[28px] font-medium leading-[1.15] tracking-tight text-foreground sm:text-[32px]">
             christian obanaka
           </h1>
           <p className="mt-3 max-w-[620px] text-pretty text-[15px] leading-[1.7] text-muted">
@@ -157,7 +161,7 @@ export default function ResumePage() {
               download
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-4 py-2 text-[14px] font-medium text-background"
             >
-              <Download aria-hidden className="size-3.5" strokeWidth={2} />
+              <HugeiconsIcon icon={Download04Icon} aria-hidden className="size-3.5" strokeWidth={2} />
               Download PDF
             </a>
             <a
@@ -331,7 +335,7 @@ function Section({
 }) {
   return (
     <section className="mt-16">
-      <h2 className="mb-5 text-[15px] font-medium tracking-tight text-foreground">
+      <h2 className="mb-5 text-[16px] font-medium text-foreground">
         {title}
       </h2>
       {children}
@@ -349,7 +353,7 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
     >
       {children}
       {!isMail ? (
-        <ArrowUpRight
+        <HugeiconsIcon icon={ArrowUpRight01Icon}
           aria-hidden
           className="h-3 w-3 self-center text-muted transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
           strokeWidth={2}
