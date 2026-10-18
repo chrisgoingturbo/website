@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -297,14 +296,6 @@ export default function ResumePage() {
 
         <Section title="projects">
           <ul className="space-y-2">
-            <li>
-              <Link
-                href="/work/trackmyprop/"
-                className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-              >
-                trackmyprop — product design and engineering case study
-              </Link>
-            </li>
             <li>
               <ExtLink href="https://trackmyprop.app">trackmyprop product website</ExtLink>
             </li>

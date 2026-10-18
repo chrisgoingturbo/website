@@ -188,30 +188,6 @@ export default function Home() {
             , a desktop workspace for prop-firm accounts, rules, journals, and
             payouts.
           </p>
-          <p className="text-[14px] leading-[1.65] text-muted">
-            Read the{" "}
-            <Link
-              href="/work/trackmyprop/"
-              prefetch={false}
-              className="font-medium text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-            >
-              trackmyprop case study
-            </Link>
-            , find me on{" "}
-            <ExternalLink href="https://x.com/chrisgoingturbo">X</ExternalLink>
-            {" "}and{" "}
-            <ExternalLink href="https://www.linkedin.com/in/christian-obanaka/">
-              LinkedIn
-            </ExternalLink>
-            , or reach me by{" "}
-            <a
-              href="mailto:christian@godsbattle.net"
-              className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-            >
-              email
-            </a>
-            .
-          </p>
         </div>
       </header>
 
@@ -508,19 +484,5 @@ function ProjectPeriod({ start, end }: { start: string; end: string }) {
         {end}
       </span>
     </span>
-  );
-}
-
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer noopener"
-      className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-    >
-      {children}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
   );
 }

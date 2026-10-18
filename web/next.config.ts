@@ -21,6 +21,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The case study page was removed; send old links to the product.
+      { source: "/work/trackmyprop", destination: "https://trackmyprop.app", permanent: false },
+      { source: "/work/trackmyprop/:path*", destination: "https://trackmyprop.app", permanent: false },
       { source: "/trackmyprop", destination: "https://trackmyprop.app", permanent: true },
       { source: "/trackmyprop/:path*", destination: "https://trackmyprop.app/:path*", permanent: true },
       { source: "/proptracker", destination: "/trackmyprop", permanent: true },
