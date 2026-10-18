@@ -113,11 +113,11 @@ function ProductCard({ product }: { product: Product }) {
     <article className="card-shadow group flex h-full flex-col overflow-hidden rounded-2xl bg-card transition-shadow duration-200 ease-out">
       <div className="relative flex h-[180px] w-full items-center justify-center bg-muted/10">
         {product.thumbnail}
-        <span className="absolute left-4 top-4 rounded-full bg-accent-soft px-2.5 py-[3px] text-[11px] font-medium text-accent">
+        <span className="absolute left-4 top-4 rounded-full bg-accent-soft px-2.5 py-[3px] text-[12px] font-medium text-accent">
           free
         </span>
         {isSoon ? (
-          <span className="absolute right-4 top-4 rounded-full border border-border bg-card px-2.5 py-[3px] text-[11px] text-muted">
+          <span className="absolute right-4 top-4 rounded-full border border-border bg-card px-2.5 py-[3px] text-[12px] text-muted">
             soon
           </span>
         ) : null}

@@ -217,7 +217,7 @@ export default function Home() {
                   height={64}
                   className="project-card-logo size-16 object-contain"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[11px] text-muted tabular-nums">
+                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
                   2026 – Present
                 </span>
               </div>
@@ -261,7 +261,7 @@ export default function Home() {
                   size={60}
                   className="project-card-logo text-foreground"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[11px] text-muted tabular-nums">
+                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
                   2019 – 2023
                 </span>
               </div>
@@ -335,7 +335,7 @@ export default function Home() {
                           </span>
                         </a>
                       </h3>
-                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[11px] leading-4 text-muted">
+                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[12px] leading-4 text-muted">
                         {role.employment}
                       </span>
                       <span
@@ -354,7 +354,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 pl-[52px] text-pretty text-[12px] leading-[1.6] text-muted/80">
+                <p className="mt-3 pl-[52px] text-pretty text-[13px] leading-[1.6] text-muted">
                   {role.description}
                 </p>
               </li>
@@ -379,7 +379,7 @@ export default function Home() {
                       <h3 className="text-pretty text-[15px] font-medium text-foreground">
                         {item.school}
                       </h3>
-                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[11px] leading-4 text-muted">
+                      <span className="shrink-0 rounded-full bg-foreground/[0.045] px-2 py-0.5 text-[12px] leading-4 text-muted">
                         {item.level}
                       </span>
                       <span
@@ -399,7 +399,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 pl-[52px] text-pretty text-[12px] leading-[1.6] text-muted/80">
+                <p className="mt-3 pl-[52px] text-pretty text-[13px] leading-[1.6] text-muted">
                   {item.location}
                 </p>
               </li>
