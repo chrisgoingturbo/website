@@ -469,7 +469,7 @@ function Section({
   return (
     <section aria-labelledby={id} className="mt-20">
       <div className="mb-6">
-        <h2 id={id} className="text-[14px] font-medium text-foreground">
+        <h2 id={id} className="text-[16px] font-medium text-foreground">
           {title}
         </h2>
       </div>

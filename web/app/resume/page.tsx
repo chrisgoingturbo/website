@@ -331,7 +331,7 @@ function Section({
 }) {
   return (
     <section className="mt-16">
-      <h2 className="mb-5 text-[15px] font-medium tracking-tight text-foreground">
+      <h2 className="mb-5 text-[16px] font-medium text-foreground">
         {title}
       </h2>
       {children}

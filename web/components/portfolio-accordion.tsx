@@ -68,7 +68,7 @@ export function PortfolioAccordionItem({
           onClick={() => accordion.toggleSection(title)}
           className="portfolio-accordion-trigger flex min-h-12 w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-3 py-3 text-left"
         >
-          <span className="text-[14px] font-medium text-foreground">
+          <span className="text-[16px] font-medium text-foreground">
             {title}
           </span>
           <ChevronDown
