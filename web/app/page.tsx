@@ -51,6 +51,17 @@ const personJsonLd = {
 
 const experience = [
   {
+    company: "trackmyprop",
+    href: "https://trackmyprop.app",
+    logo: "/trackmyprop-logo.svg",
+    role: "Founder",
+    subrole: "Solution Engineer",
+    period: "2025 – Present",
+    employment: "Self-Employed",
+    description:
+      "Building a desktop workspace for prop-firm accounts, rules, journals, and payouts.",
+  },
+  {
     company: "Tradara",
     href: "https://tradara.com",
     logo: "/tradara-logo.svg",
@@ -177,30 +188,6 @@ export default function Home() {
             , a desktop workspace for prop-firm accounts, rules, journals, and
             payouts.
           </p>
-          <p className="text-[14px] leading-[1.65] text-muted">
-            Read the{" "}
-            <Link
-              href="/work/trackmyprop/"
-              prefetch={false}
-              className="font-medium text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-            >
-              trackmyprop case study
-            </Link>
-            , find me on{" "}
-            <ExternalLink href="https://x.com/chrisgoingturbo">X</ExternalLink>
-            {" "}and{" "}
-            <ExternalLink href="https://www.linkedin.com/in/christian-obanaka/">
-              LinkedIn
-            </ExternalLink>
-            , or reach me by{" "}
-            <a
-              href="mailto:christian@godsbattle.net"
-              className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-            >
-              email
-            </a>
-            .
-          </p>
         </div>
       </header>
 
@@ -221,9 +208,7 @@ export default function Home() {
                   height={64}
                   className="project-card-logo size-16 object-contain"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
-                  2026 – Present
-                </span>
+                <ProjectPeriod start="2025" end="Present" />
               </div>
               <div className="project-card-panel absolute inset-x-0 bottom-0 isolate px-4 py-3.5">
                 <span
@@ -265,9 +250,7 @@ export default function Home() {
                   size={60}
                   className="project-card-logo text-foreground"
                 />
-                <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
-                  2019 – 2023
-                </span>
+                <ProjectPeriod start="2019" end="2023" />
               </div>
               <div className="project-card-panel absolute inset-x-0 bottom-0 isolate px-4 py-3.5">
                 <span
@@ -352,6 +335,9 @@ export default function Home() {
                     </div>
                     <h4 className="mt-0.5 text-[13px] text-muted">
                       {role.role}
+                      {"subrole" in role ? (
+                        <span className="text-muted/80"> · {role.subrole}</span>
+                      ) : null}
                     </h4>
                     <p className="mt-1 text-[12px] text-muted tabular-nums sm:hidden">
                       {role.period}
@@ -482,16 +468,21 @@ function Section({
   );
 }
 
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
+/* Shows only the end of a project's run; hovering or focusing the card
+   draws a hairline out of the end label and reveals the start year. */
+function ProjectPeriod({ start, end }: { start: string; end: string }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer noopener"
-      className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-    >
-      {children}
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
+    <span className="absolute right-4 top-4 whitespace-nowrap text-[12px] text-muted tabular-nums">
+      <span className="sr-only">
+        {start} to {end}
+      </span>
+      <span aria-hidden className="project-period relative inline-flex items-center">
+        <span className="project-period-start">
+          <span className="project-period-year">{start}</span>
+          <span className="project-period-line" />
+        </span>
+        {end}
+      </span>
+    </span>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -34,7 +33,8 @@ type Role = {
   logo: string;
   url?: string;
   title: string;
-  employment: "Full-Time" | "Part-Time";
+  subtitle?: string;
+  employment: "Full-Time" | "Part-Time" | "Self-Employed";
   start: string;
   end: string;
   blurb: string;
@@ -42,6 +42,18 @@ type Role = {
 };
 
 const experience: Role[] = [
+  {
+    company: "trackmyprop",
+    logo: "/trackmyprop-logo.svg",
+    url: "https://trackmyprop.app",
+    title: "Founder",
+    subtitle: "Solution Engineer",
+    employment: "Self-Employed",
+    start: "2025",
+    end: "Present",
+    blurb:
+      "Building a desktop workspace for prop-firm accounts, rules, journals, and payouts.",
+  },
   {
     company: "Tradara",
     logo: "/tradara-logo.svg",
@@ -215,7 +227,9 @@ export default function ResumePage() {
                       </p>
                     </div>
                     <p className="text-[14px] text-muted">
-                      {role.title} · {role.employment}
+                      {role.title}
+                      {role.subtitle ? ` · ${role.subtitle}` : null} ·{" "}
+                      {role.employment}
                     </p>
                     <p className="mt-2 text-[14px] leading-[1.65] text-foreground/80">
                       {role.blurb}
@@ -282,14 +296,6 @@ export default function ResumePage() {
 
         <Section title="projects">
           <ul className="space-y-2">
-            <li>
-              <Link
-                href="/work/trackmyprop/"
-                className="text-foreground underline decoration-border underline-offset-[3px] hover:decoration-foreground"
-              >
-                trackmyprop — product design and engineering case study
-              </Link>
-            </li>
             <li>
               <ExtLink href="https://trackmyprop.app">trackmyprop product website</ExtLink>
             </li>

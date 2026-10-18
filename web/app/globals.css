@@ -241,6 +241,70 @@
   filter: blur(0);
 }
 
+/* Project period: the start year sits outside the label's box, so the
+   reveal is transform, opacity and clip-path only — "Present" never moves.
+   The hairline draws out of the end label first, then the year follows. */
+.project-period-start {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding-right: 0.375rem;
+  translate: 0 -50%;
+}
+.project-period-line {
+  width: 0.625rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.project-period-year {
+  opacity: 0;
+  transform: translateX(4px);
+  clip-path: inset(0 0 0 100%);
+  transition:
+    opacity 120ms ease-out,
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+    clip-path 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-period-line {
+    transform: scaleX(1);
+    transition-duration: 220ms;
+  }
+  .project-card:hover .project-period-year {
+    opacity: 1;
+    transform: translateX(0);
+    clip-path: inset(0);
+    transition-duration: 200ms, 260ms, 260ms;
+    transition-delay: 50ms;
+  }
+}
+.project-card:focus-visible .project-period-line {
+  transform: scaleX(1);
+}
+.project-card:focus-visible .project-period-year {
+  opacity: 1;
+  transform: translateX(0);
+  clip-path: inset(0);
+}
+/* No hover on touch screens, so show the full range there. */
+@media (hover: none) {
+  .project-period-line {
+    transform: none;
+  }
+  .project-period-year {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}
+
 .portfolio-accordion-section {
   transition: background-color 150ms ease-out;
 }
@@ -422,6 +486,19 @@
   .project-card:hover .project-card-logo,
   .project-card:focus-visible .project-card-logo {
     transform: none;
+  }
+  .project-period-line,
+  .project-period-year {
+    transform: none;
+    clip-path: none;
+    transition: opacity 150ms ease-out;
+  }
+  .project-period-line {
+    opacity: 0;
+  }
+  .project-card:hover .project-period-line,
+  .project-card:focus-visible .project-period-line {
+    opacity: 0.5;
   }
   .github-summary-change {
     animation: none;
