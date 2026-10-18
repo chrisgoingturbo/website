@@ -51,6 +51,17 @@ const personJsonLd = {
 
 const experience = [
   {
+    company: "trackmyprop",
+    href: "https://trackmyprop.app",
+    logo: "/trackmyprop-logo.svg",
+    role: "Founder",
+    subrole: "Solution Engineer",
+    period: "2025 – Present",
+    employment: "Self-Employed",
+    description:
+      "Building a desktop workspace for prop-firm accounts, rules, journals, and payouts.",
+  },
+  {
     company: "Tradara",
     href: "https://tradara.com",
     logo: "/tradara-logo.svg",
@@ -348,6 +359,9 @@ export default function Home() {
                     </div>
                     <h4 className="mt-0.5 text-[13px] text-muted">
                       {role.role}
+                      {"subrole" in role ? (
+                        <span className="text-muted/80"> · {role.subrole}</span>
+                      ) : null}
                     </h4>
                     <p className="mt-1 text-[12px] text-muted tabular-nums sm:hidden">
                       {role.period}
