@@ -10,6 +10,8 @@
     "sync-images": "node scripts/sync-content-images.mjs"
   },
   "dependencies": {
+    "@hugeicons/core-free-icons": "4.3.5",
+    "@hugeicons/react": "1.1.10",
     "gray-matter": "^4.0.3",
     "lite-youtube-embed": "^0.3.4",
     "lucide-react": "^1.59.0",

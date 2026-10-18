@@ -129,10 +129,10 @@ export default function Home() {
       <header>
         <div className="flex min-w-0 items-center justify-between gap-4">
           <div className="min-w-0">
-            <h1 className="truncate text-[17px] font-medium leading-[1.25] text-foreground">
+            <h1 className="text-[17px] font-medium leading-[1.25] text-foreground">
               Christian Obanaka
             </h1>
-            <div className="mt-1 text-[14px] font-medium text-muted">
+            <div className="mt-1 text-[15px] font-medium text-muted">
               Design engineer
             </div>
           </div>
